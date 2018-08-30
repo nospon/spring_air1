@@ -28,7 +28,7 @@ import org.zerock.persistence.ScheduleDAO;
 import org.zerock.service.ScheduleService;
 
 @Controller
-@RequestMapping("/schedule/*") // boardÎäî ÌÅ¥ÎûòÏä§ register Î©îÏÜåÎìú
+@RequestMapping("/schedule/*") // board¥¬ ≈¨∑°Ω∫ register ∏ﬁº“µÂ
 class ScheduleController {
 	private static final Logger logger = LoggerFactory.getLogger(ScheduleController.class);
 
@@ -37,7 +37,7 @@ class ScheduleController {
 
 	@RequestMapping(value = "/listAll", method = RequestMethod.GET)
 	public String listAll(Model model) throws Exception {
-		logger.info("Ï†ÑÏ≤¥Î¶¨Ïä§Ìä∏ Î≥¥Í∏∞");
+		logger.info("¿¸√º∏ÆΩ∫∆Æ ∫∏±‚");
 
 		model.addAttribute("listAll", service.listAll());
 		return "/schedule/listAll";
@@ -45,11 +45,19 @@ class ScheduleController {
 
 @RequestMapping(value = "/list", method = RequestMethod.GET)
 	public String list(Model model) throws Exception {
-		logger.info("Î¶¨Ïä§Ìä∏ Î≥¥Í∏∞");
+		logger.info("∏ÆΩ∫∆Æ ∫∏±‚");
 
 		model.addAttribute("list", service.list());
 		return "/schedule/list";
 	}
+
+@RequestMapping(value = "/schedule", method = RequestMethod.GET)
+public String schedule(Model model) throws Exception {
+	logger.info("øÓ«◊¿œ¡§∫∏±‚");
+
+	model.addAttribute("list", service.list());
+	return "/schedule/schedule";
+}
 	/*@RequestMapping(value = "/save", method = RequestMethod.POST)
 	public String save(Model model) throws Exception {
 	
@@ -57,12 +65,12 @@ class ScheduleController {
 	}*/
 	 @RequestMapping(value="/save",method=RequestMethod.GET)
 	    public void createGET(Schedule_InfoVO vo, Model model) throws Exception{
-	        System.out.println(" GETÎ∞©Ïãù");
+	        System.out.println(" GETπÊΩƒ");
 	        
 	    }
 	 @RequestMapping(value="/save",method=RequestMethod.POST)
 		public String createPOST(Schedule_InfoVO vo,RedirectAttributes rttr) throws Exception{
-			System.out.println(" POSTÎ∞©Ïãù");
+			System.out.println(" POSTπÊΩƒ");
 			System.out.println(vo.toString());
 			System.out.println(vo.getSc_num1());
 			System.out.println(vo.getAir_name1());
