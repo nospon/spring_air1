@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.zerock.mapper.qna_boardMapper">
+
+
+<insert id="create">
+		insert into qna_board (name, email, tel, title, content)
+		 values (#{name}, #{email}, #{tel}, #{title}, #{content})
+	</insert>
+
+</mapper>
+
+

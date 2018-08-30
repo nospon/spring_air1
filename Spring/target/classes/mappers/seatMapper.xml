@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.zerock.mapper.SeatMapper">
+
+	<select id="listSeat" resultType="org.zerock.domain.SeatInfoVO">
+		<![CDATA[
+			select schedule.Sc_num, schedule.air_name, schedule.de_date, schedule.tic_price, seat.seat_num, seat.seat_YN, air.na_num, air.Seat_total from schedule, seat, air where seat.Air_name=schedule.air_name and air.Air_name=schedule.Air_name
+		]]>
+	</select>	
+	
+	<select id="listSC" resultType="org.zerock.domain.SeatInfoVO">
+		<![CDATA[
+			select schedule.Sc_num, schedule.air_name, schedule.de_date, schedule.tic_price, seat.seat_num, seat.seat_YN, air.na_num, air.Seat_total from schedule, seat, air where seat.Air_name=schedule.air_name and air.Air_name=schedule.Air_name and air.Air_name=#{air_name} and sc_num=#{sc_num}
+		]]>
+	</select>
+	
+	<update id="update">
+		<!-- update seat,schedule set seat_YN=1, cnt=cnt+1 where seat.air_name=schedule.air_name and seat.seat_num=#{seat_num} and schedule.air_name=#{air_name} -->
+		update schedule, seat, air set seat.seat_YN=seat.Seat_YN-1 , air.Seat_total=air.Seat_total-1 where seat.Air_name=schedule.air_name and air.Air_name=schedule.Air_name and air.Air_name=#{air_name} and sc_num=#{sc_num} and seat.Seat_num=#{seat_num}
+	</update>
+	
+	<insert id="create">
+		insert into payment (name, pay_card, pay_cardname, pay_cardnum, pay_cardpw, pay_cardcvc, res_rnum ,tic_price) 
+		values (#{name},#{pay_card}, #{pay_cardname}, #{pay_cardnum}, #{pay_cardpw}, #{pay_cardcvc}, #{res_rnum} ,#{tic_price})
+	</insert>
+		
+	<select id="listSeatPage" resultType="org.zerock.domain.SeatInfoVO">
+		 select schedule.Sc_num, schedule.air_name, schedule.de_date, schedule.tic_price, seat.seat_num, seat.seat_YN, air.na_num, air.Seat_total from schedule, seat, air where seat.Air_name=schedule.air_name and air.Air_name=schedule.Air_name and air.Air_name=#{air_name} and sc_num=#{sc_num} limit #{cri.pageStart}, #{cri.perPageNum} 	
+	</select>
+	
+	<select id="count" resultType="int">
+		select count(air_name) from seat where air_name=#{air_name}
+	</select> 
+	
+	<select id="ticPrice" resultType="org.zerock.domain.SeatInfoVO">
+		select (tic_price1+tic_price2) as tic_price from resinfo where resInfo_num=(select max(resinfo_num) from resinfo)
+	</select>
+	
+	<select id="resList" resultType="org.zerock.domain.PaymentVO">
+		select name, pay_date, res_rnum from payment where pay_num=(select max(pay_num) from payment)
+	</select>
+	
+	<insert id="resinfoin">
+		insert into resinfo (air_name1, de_date, <!-- ar_date,  -->de_time1, ar_time1, de_place1, ar_place1, seat_num1, tic_price1) 
+		select schedule.air_name, schedule.de_date, <!-- schedule.ar_date, --> schedule.de_time,schedule.ar_time, schedule.de_place, schedule.ar_place, seat.seat_num, schedule.tic_price
+    	from schedule, seat, air where seat.Air_name=schedule.air_name and air.Air_name=schedule.Air_name and schedule.Air_name=#{air_name} and schedule.sc_num=#{sc_num} and seat.seat_num=#{seat_num}
+	</insert>
+	
+	<update id="resinfoud">
+		update resinfo, seat, air, schedule set air_name2=schedule.Air_name, ar_date=schedule.de_date, de_time2=schedule.De_time , ar_time2=schedule.Ar_time , de_place2=schedule.De_place , ar_place2=schedule.Ar_place , seat_num2=seat.Seat_num, tic_price2=schedule.tic_price 
+		where resinfo_num=(select * from (select max(ResInfo_num) from resinfo) as a) and seat.Air_name=schedule.air_name and air.Air_name=schedule.Air_name and schedule.Air_name=#{air_name} and schedule.sc_num=#{sc_num} and seat.seat_num=#{seat_num}
+	</update>
+	
+	<select id="ticketinfoLi" resultType="org.zerock.domain.ResInfoVO">
+		select payment.name, payment.res_rnum, resinfo.air_name1, resinfo.air_name2, resinfo.de_date, resinfo.ar_date, resinfo.de_time1, resinfo.de_time2, resinfo.ar_time1, resinfo.ar_time2, resinfo.de_place1, resinfo.de_place2, resinfo.ar_place1, resinfo.ar_place2, resinfo.seat_num1, resinfo.seat_num2, payment.tic_price, payment.pay_card, payment.pay_date, payment.pay_num, resinfo.resinfo_num from resinfo, payment where resinfo.resinfo_num=payment.Pay_num
+		and payment.name=#{name} and payment.res_rnum=#{res_rnum}	
+	</select>
+	
+	<delete id="paymentRM">
+		DELETE payment, resinfo
+		FROM payment, resinfo 
+		WHERE payment.pay_num=resinfo.resinfo_num and payment.pay_num=#{pay_num}
+	</delete>
+	
+	<delete id="resinfoRM">
+		delete from resinfo where resinfo_num=#{resinfo_num}
+	</delete>
+	
+	<update id="seatUpdate">
+		update air, seat set air.Seat_total=air.Seat_total+1, seat.seat_YN=1 
+		where seat.air_name=air.air_name and (seat.seat_num=#{seat_num1} and air.air_name=#{air_name1}) or (seat.seat_num=#{seat_num2} and air.air_name=#{air_name2})
+	</update>
+	
+	<select id="snumList" resultType="org.zerock.domain.Schedule_InfoVO">
+		select sc_num1, sc_num2, air_name1, air_name2 from schedule_info where s_num=(select max(s_num) from schedule_info)
+	</select>
+</mapper>

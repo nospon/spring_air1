@@ -1,0 +1,24 @@
+@charset "UTF-8";
+
+
+
+
+/*-----footer -----*/
+.footer {
+	clear: both;
+	width: 100%;
+	height: 130px;
+	background: #252D2E;
+	font-size: 12px;
+	color: #E3E3E3;	
+	
+}
+
+
+.footer_font{
+	margin-left: 32px;	
+}
+
+.footer_ul {list-style-type:none;margin:0;padding:0}
+.footer_li {float:left;}
+

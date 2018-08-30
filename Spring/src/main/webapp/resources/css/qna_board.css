@@ -1,0 +1,247 @@
+@charset "UTF-8";
+
+
+
+/*고객센터 tab*/
+* {box-sizing: border-box}
+body {font-size: 14px;}
+
+/* Style the tab */
+.tab {
+    float: left;   
+    background-color: #f2f2f2;
+    width: 230px;
+    height: 590px;
+    margin-left: 69px;
+}
+
+
+.tablinks1 {
+    float: left;
+    width: 230px;
+    height: 200px;  
+}
+
+/* Style the buttons inside the tab */
+.tab > .tablinks {
+    display: block;
+    background-color: #f2f2f2;
+    color: #252D2E;
+    padding: 22px 16px;
+    width: 100%;
+    border: none;
+    border-bottom: 0.8px solid #D8D6CA;
+    outline: none;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
+
+
+.tab > .tablinks1 {
+    display: block;
+    background-color: #fe5674;
+    color: white;
+    padding: 22px 16px;
+    width: 100%;
+    border: none;
+    border-bottom: 0.8px solid #D8D6CA;
+    outline: none;
+    text-align: left; 
+    font-size: 30px;
+    font-weight: bold;
+}
+
+
+
+
+/* Change background color of buttons on hover */
+.tab > .tablinks:hover {
+    background-color: #D8D6CA;
+}
+
+
+
+/* Style the tab content */
+.tabcontent {
+    float: left;
+    padding: 0px 12px;  
+    width: 840px;
+    border-left: none;
+    height: 70%;
+    margin-left: 40px;
+    margin-top: 100px;
+}
+
+/*고객센터 tab끝*/
+
+
+
+/*자주묻는질문*/
+
+.faq_button {
+    width: 150px;
+    height: 50px;
+    background-color: #f2f2f2;
+    border: 1px solid #D8D6CA;         
+    border: none;   
+    cursor: pointer;
+}
+
+.faq_button > a {
+	color: #252D2E;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.faq_button:hover {
+    background-color: #fe5674;   
+}
+
+.faq_button:hover a {    
+    color: #fff;
+}
+
+
+
+
+
+
+
+
+.collapsible {   
+    color: #252D2E;
+    background-color: #fff;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    border-top: 0.5px solid #D8D6CA; 
+    border-bottom: 0.5px solid #D8D6CA; 
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+}
+
+
+
+.content {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+
+
+.faq_span {
+   color: #fe5674;	
+   font-weight: bold; 
+}
+
+
+.answer {
+   margin-left: 20px;
+}
+
+.buttonCategory_ul {
+   list-style:none;
+   padding-left:0px;   
+}
+
+.buttonCategory {
+   display:inline; 	
+}
+
+
+li{
+   list-style:none;
+}
+
+/*자주묻는질문 끝*/
+
+
+
+
+
+/*고객문의 페이지 css*/
+
+
+#boardformArea {
+	margin-left: 60px;
+}
+
+
+
+table {
+	
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td {
+    padding: 10px;
+    text-align: left;
+    border-top: 1px solid #D8D6CA;
+    border-bottom: 1px solid #D8D6CA;
+    border-left: 1px solid #D8D6CA;
+}
+
+.td_style{
+	background: #f2f2f2;  
+    width: 30%;
+}
+
+.td_style1{
+	background: #f2f2f2;  
+    border-top: 3px solid #fe5674;
+}
+
+.td_style2{	 
+    border-top: 3px solid #fe5674;
+}
+
+
+
+span{
+	color: #ff4242;
+}
+
+
+
+input[type=text],select {
+    width: 400px; /*가로*/
+    padding: 10px 10px; /*높이, 폰트 margin left */
+    margin: 10px 0; /*form 사이 간격*/
+    display: inline-block;
+    border: 1px solid #ccc; 
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.button {
+    width: 260px;
+    background-color: #fe5674;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left:280px;
+}
+
+.button:hover {
+    background-color: #fe123c;
+}
+
+.button a{
+	text-decoration: none;
+    color: #fff;
+}
+
+/*고객문의 페이지 css 끝*/

@@ -1,0 +1,115 @@
+@charset "UTF-8";
+
+
+#joinformArea{
+	text-align: center;
+}
+
+
+table {	
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-top: 1px solid #D8D6CA;
+    border-bottom: 1px solid #D8D6CA;
+    border-left: 1px solid #D8D6CA;
+}
+
+.td_style{
+	background: #f2f2f2;  
+    width: 30%;
+}
+
+.td_style1{
+	background: #f2f2f2;  
+    border-top: 3px solid #fe5674;
+}
+
+
+.td_style2{	 
+    border-top: 3px solid #fe5674;
+}
+
+
+span{
+	color: #ff4242;
+}
+
+
+
+input[type=text], [type=password], select {
+    width: 300px; /*가로*/
+    padding: 10px 10px; /*높이, 폰트 margin left */
+    margin: 10px 0; /*form 사이 간격*/
+    display: inline-block;
+    border: 1px solid #D8D6CA; 
+    border-radius: 0px;
+    box-sizing: border-box;
+}
+
+.button {
+    width: 260px;
+    background-color: #fe5674;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #fe123c;
+}
+
+
+.button1 {
+    width: 260px;
+    background-color: #716C68;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.button1:hover {
+    background-color: #3d3a38;
+}
+
+
+.button2 {
+    width: 250px;
+    background-color: #fe5674;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.button2:hover {
+    background-color: #fe123c;
+}
+
+
+.button_style{	
+    text-align: right;
+}
+
+
+.button_style a{
+	color: #fff;
+    text-decoration: none;
+    text-align: right;
+}
+
+
+
+
