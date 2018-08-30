@@ -24,6 +24,15 @@ select *from Schedule
 
 	</select>
 
+<select id="schedule" resultType="org.zerock.domain.ScheduleVO">
+	<![CDATA[
+
+		
+select *from Schedule
+
+	]]>
+
+	</select>
 	<insert id="insert">
 		insert into schedule_info
 

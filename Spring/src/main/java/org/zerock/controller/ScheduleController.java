@@ -28,7 +28,7 @@ import org.zerock.persistence.ScheduleDAO;
 import org.zerock.service.ScheduleService;
 
 @Controller
-@RequestMapping("/schedule/*") // board¥¬ ≈¨∑°Ω∫ register ∏ﬁº“µÂ
+@RequestMapping("/schedule/*") // boardÎäî ÌÅ¥ÎûòÏä§ register Î©îÏÜåÎìú
 class ScheduleController {
 	private static final Logger logger = LoggerFactory.getLogger(ScheduleController.class);
 
@@ -37,7 +37,7 @@ class ScheduleController {
 
 	@RequestMapping(value = "/listAll", method = RequestMethod.GET)
 	public String listAll(Model model) throws Exception {
-		logger.info("¿¸√º∏ÆΩ∫∆Æ ∫∏±‚");
+		logger.info("Ï†ÑÏ≤¥Î¶¨Ïä§Ìä∏ Î≥¥Í∏∞");
 
 		model.addAttribute("listAll", service.listAll());
 		return "/schedule/listAll";
@@ -45,7 +45,7 @@ class ScheduleController {
 
 @RequestMapping(value = "/list", method = RequestMethod.GET)
 	public String list(Model model) throws Exception {
-		logger.info("∏ÆΩ∫∆Æ ∫∏±‚");
+		logger.info("Î¶¨Ïä§Ìä∏ Î≥¥Í∏∞");
 
 		model.addAttribute("list", service.list());
 		return "/schedule/list";
@@ -53,7 +53,7 @@ class ScheduleController {
 
 @RequestMapping(value = "/schedule", method = RequestMethod.GET)
 public String schedule(Model model) throws Exception {
-	logger.info("øÓ«◊¿œ¡§∫∏±‚");
+	logger.info("Ïö¥Ìï≠ÏùºÏ†ïÎ≥¥Í∏∞");
 
 	model.addAttribute("list", service.list());
 	return "/schedule/schedule";
@@ -65,12 +65,12 @@ public String schedule(Model model) throws Exception {
 	}*/
 	 @RequestMapping(value="/save",method=RequestMethod.GET)
 	    public void createGET(Schedule_InfoVO vo, Model model) throws Exception{
-	        System.out.println(" GETπÊΩƒ");
+	        System.out.println(" GETÎ∞©Ïãù");
 	        
 	    }
 	 @RequestMapping(value="/save",method=RequestMethod.POST)
 		public String createPOST(Schedule_InfoVO vo,RedirectAttributes rttr) throws Exception{
-			System.out.println(" POSTπÊΩƒ");
+			System.out.println(" POSTÎ∞©Ïãù");
 			System.out.println(vo.toString());
 			System.out.println(vo.getSc_num1());
 			System.out.println(vo.getAir_name1());
@@ -102,5 +102,4 @@ public String schedule(Model model) throws Exception {
 	
 }
 	
-
 
