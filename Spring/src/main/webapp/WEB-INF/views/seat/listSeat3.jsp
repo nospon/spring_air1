@@ -3,27 +3,59 @@
 <%@ page session="false" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<link rel="icon" type="image/ico"  href="../resources/image/main_images/Favicon.ico"/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <style>
-	#seatYN{
-		Width:300px;
-		height:100px;
-		background-color:lightgray;
-		position:absolute;
-		top:100px;
-		left:400px;
-		margin-top:-50px;
-		margin-left:-150px;
-		padding:10px;
-		z-index:1000; 
-	}
-	
+
+body{
+background-image: url('../resources/image/main_images/main_header.png'),url('../resources/image/main_images/main_footer2.png');
+background-repeat: repeat-x;
+background-position: left top,left bottom;
+}
+
+.section_All{
+	margin-left: 100px;
+}
+
+table {	
+    border-collapse: collapse;
+    width: 100%;
+    background-color: rgba(216,214,202,0.05);
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #D8D6CA; 
+}
+
+
+.td_style1{
+	background-color: rgba(216,214,202,0.7); 
+    border-top: 3px solid #fe5674;
+    border-right: 1px solid rgba(0,0,0,0);  
+    border-bottom: 1px solid rgba(224,112,136,0.4); 
+}
+
+.td_style2{
+	background-color: rgba(216,214,202,0.7); 
+    border-top: 3px solid #fe5674;  
+    border-bottom: 1px solid rgba(224,112,136,0.4);  
+}
+
 </style>
 
-<title>좌석 선택(가는편)</title>
-<h3>가는편 좌석 예약</h3>
+<title>좌석 선택 | 스프링에어</title>
+
+<body>
+<%@include file="../main/header.jsp" %>
+
+
+<div class="section_All">
+<br><br><br>
+<h3><b>가는편 좌석 예약</b></h3>
 <div>
-	<table id="passenger_details" border=1></table>
+	<table id="passenger_details"></table>
 </div>
 
 <div class='span'><span>[ A,F는 창가 좌석입니다. ]</span></div>
@@ -35,8 +67,10 @@
 	</div>
 </div>
 
-<div><ul class="pagination"></ul></div>
-
+<div><ul class="pagination"></ul></div></div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<%@include file="../main/footer.jsp" %>
+</body>
 <script>
 var str=""; 
 var seatRePage=1;
@@ -61,9 +95,9 @@ var sc_num="";
 			//console.log(data.length);
 			var str="";
 			str="<form role='form' method='post'>"+ 
-				"<tr>"+"<th>"+"좌석번호"+"</th>"+
-				"<th>"+"가격"+"</th>"+
-				"<th>"+"check"+"</th>"+"</tr>"
+				"<tr>"+'<th class="td_style1">'+"좌석번호"+"</th>"+
+				'<th class="td_style1">'+"가격"+"</th>"+
+				'<th class="td_style2">'+"check"+"</th>"+"</tr>"
 		$(data.list).each(
 			function(){
 			    	str+="<tr class='seatLi'>"+"<td>"+this.seat_num+"</td>"+
@@ -168,9 +202,9 @@ var sc_num="";
 			console.log(data.list.length);
 			var str="";
 			str="<form role='form' method='post'>"+
-				"<tr>"+"<th>"+"좌석번호"+"</th>"+
-				"<th>"+"가격"+"</th>"+
-				"<th>"+"check"+"</th>"+"</tr>"
+				"<tr>"+'<th class="td_style1">'+"좌석번호"+"</th>"+
+				'<th class="td_style1">'+"가격"+"</th>"+
+				'<th class="td_style2">'+"check"+"</th>"+"</tr>"
 		$(data.list).each(
 			function(){
 			    	str+="<tr class='seatLi'>"+"<td>"+this.seat_num+"</td>"+
@@ -218,4 +252,4 @@ var sc_num="";
 
 <div id="container">	
 </div>
-
+</body>
