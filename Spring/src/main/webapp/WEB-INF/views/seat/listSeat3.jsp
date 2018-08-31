@@ -14,34 +14,203 @@ background-position: left top,left bottom;
 }
 
 .section_All{
-	margin-left: 100px;
+	margin-left: 100px;		
 }
 
 table {	
     border-collapse: collapse;
     width: 100%;
     background-color: rgba(216,214,202,0.05);
+    color: #252D2E;
 }
 
 th, td {
     padding: 10px;
     text-align: left;
     border: 1px solid #D8D6CA; 
+    font-size: 14px;
 }
 
-
+/*좌석번호 가격속성*/
 .td_style1{
-	background-color: rgba(216,214,202,0.7); 
+	background-color: rgba(216,214,202,0.3); 
     border-top: 3px solid #fe5674;
     border-right: 1px solid rgba(0,0,0,0);  
     border-bottom: 1px solid rgba(224,112,136,0.4); 
 }
 
+/*check속성*/
 .td_style2{
-	background-color: rgba(216,214,202,0.7); 
+	background-color: rgba(216,214,202,0.3); 
     border-top: 3px solid #fe5674;  
     border-bottom: 1px solid rgba(224,112,136,0.4);  
+    width:40%;
+    text-align: center;
 }
+
+
+
+
+
+/*나머지 행,열*/
+.td_style3{
+	background-color: rgba(216,214,202,0.05); 
+    border-bottom: 1px solid rgba(216,214,202,0.7); 
+    border-right: 1px solid rgba(216,214,202,0.4); 
+}
+
+
+
+
+/*버튼 속성*/
+
+#button {
+    width: 204px;
+    background-color: #fe5674;
+    color: white;
+    padding: 10px 10px;    
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 109px; 
+}
+
+#button:hover {
+    background-color: #fe123c;
+}
+
+
+/* 가는편 좌석 예약 속성 */
+.seat_title{
+   width: 220px;
+   height: 25px;
+   font-weight: bold;
+   color: #252D2E;
+   margin-bottom: -15px;
+   margin-left: -12px;
+   border: 2px solid rgba(0,0,0,0);      
+   background: rgba(0,0,0,0);
+}
+
+.seat_title th, .seat_title td {
+   border: 2px solid rgba(0,0,0,0);      
+  
+}
+
+
+.seat_title img {
+   margin-bottom: 12px;
+}
+
+
+
+/* 하단 좌석배치표 글씨및 정사각형 속성 */
+
+.seat_title1{
+   width: 280px;
+   height: 25px;
+   font-weight: bold;
+   color: #252D2E;
+   margin-bottom: -15px;
+   margin-left: -12px;
+   border: 2px solid rgba(0,0,0,0);      
+   background: rgba(0,0,0,0);
+}
+
+.seat_title1 th, .seat_title1 td {
+   border: 2px solid rgba(0,0,0,0);      
+  
+}
+
+
+.seat_title1 img {
+   margin-bottom: 12px;
+}
+
+
+.bottom_text {
+   width: 1100px;
+   height: 25px;
+   font-weight: bold;
+   color: #252D2E;
+   margin-bottom: -15px;        
+   border-top: 3px solid #fe5674;  
+   background-color: rgba(216,214,202,0.2); 
+}
+
+
+
+.bottom_td1{
+   width: 1.5%;      
+   border-right: 1px solid rgba(0,0,0,0);   
+}
+
+.bottom_td2{
+   width: 1.5%; 
+   border-left: 1px solid rgba(0,0,0,0);    
+   border-right: 1px solid rgba(0,0,0,0);   
+}
+
+.bottom_td3{
+   width: 100px; 
+   border-left: 1px solid rgba(0,0,0,0);         
+}
+
+.bottom_td4{
+   width: 80px; 
+   border-left: 1px solid rgba(0,0,0,0);    
+   border-right: 1px solid rgba(0,0,0,0);   
+   margin-left: -500px;
+}
+
+
+
+
+
+.square1{
+ 	width: 32px;
+    height: 32px;
+    background: #FE7E87;
+    margin-left: 10px;
+    
+}
+
+
+.square2{
+ 	width: 32px;
+    height: 32px;
+    background: #B6DDE8;   
+
+}
+
+.square3{
+ 	width: 32px;
+    height: 32px;
+    background: #E4E1CE;    
+}
+
+
+
+
+
+
+
+.pagination{
+	margin-left: 350px;	
+}
+
+
+
+.pagination a{
+	text-decoration: none;
+	color: #fe5674;
+}
+
+
+
+
+
+
 
 </style>
 
@@ -53,25 +222,56 @@ th, td {
 
 <div class="section_All">
 <br><br><br>
-<h3><b>가는편 좌석 예약</b></h3>
+<table class="seat_title"><tr>
+   <td><img src="../resources/image/main_images/airplain.png" height="25px" width="35px"></td>
+   <td><h3><b>가는편 | 좌석 예약</b></h3></td>
+</tr></table>
+
+
 <div>
 	<table id="passenger_details"></table>
 </div>
 
-<img src="resources/image/main_images/seatlayout.png">
-<div class='span'><span>[ A,F는 창가 좌석입니다. ]</span></div>
+
 
 <div id="seatYN" style="display: none">	
 	<div class='seat-title'></div>
 	<div>
-		<button id="seatResBtn">예약하기</button>
+		<button class="button" id="seatResBtn">예약하기</button>
 	</div>
 </div>
 
-<div><ul class="pagination"></ul></div></div>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<div><ul class="pagination"></ul></div>
+<br><br>
+<table class="seat_title1"><tr>
+   <td><img src="../resources/image/main_images/airplain.png" height="25px" width="35px"></td>
+   <td><h3><b>Spring air | 좌석 배치도</b></h3></td>
+</tr></table>
+
+<table class="bottom_text">
+<tr>
+<td class="bottom_td1"><div class="square1"></div></td>
+<td class="bottom_td4">좌석</td>
+<td class="bottom_td2"><div class="square2"></div></td>
+<td class="bottom_td4">비상구 좌석</td>
+<td class="bottom_td2"><div class="square3"></div></td>
+<td class="bottom_td4">화장실</td>
+<td class="bottom_td3"><span>[ A,F는 창가 좌석입니다. ]</span></td>
+</tr>
+</table><br>
+
+
+<img src="../resources/image/main_images/seatlayout.png">
+
+
+
+
+
+
+</div>
+<br><br><br>
 <%@include file="../main/footer.jsp" %>
-</body>
+
 <script>
 var str=""; 
 var seatRePage=1;
@@ -101,9 +301,9 @@ var sc_num="";
 				'<th class="td_style2">'+"check"+"</th>"+"</tr>"
 		$(data.list).each(
 			function(){
-			    	str+="<tr class='seatLi'>"+"<td>"+this.seat_num+"</td>"+
-	    			        "<td>"+this.tic_price+"</td>"+
-	    			        "<td>"+"<button class='seatbtn'>예약하기</button>"+"</td>"+"</tr>"	
+			    	str+="<tr class='seatLi'>"+'<td class="td_style3">'+this.seat_num+"</td>"+
+			    	'<td class="td_style3">'+this.tic_price+"</td>"+
+			    	'<td class="td_style3">'+"<button  id='button' class='seatbtn'>예약하기</button>"+"</td>"+"</tr>"	
 		
 		});
 		str+="</form>"; 
@@ -208,9 +408,9 @@ var sc_num="";
 				'<th class="td_style2">'+"check"+"</th>"+"</tr>"
 		$(data.list).each(
 			function(){
-			    	str+="<tr class='seatLi'>"+"<td>"+this.seat_num+"</td>"+
-	    			        "<td>"+this.tic_price+"</td>"+
-	    			        "<td>"+"<button class='seatbtn'>예약하기</button>"+"</td>"+"</tr>"	
+			    	str+="<tr class='seatLi'>"+'<td class="td_style3">'+this.seat_num+"</td>"+
+			    	'<td class="td_style3">'+this.tic_price+"</td>"+
+	    			        "<td>"+"<button id='button' class='seatbtn'>예약하기</button>"+"</td>"+"</tr>"	
 		
 		});
 	    str+="</form>"; 
@@ -225,7 +425,7 @@ var sc_num="";
 		var str="";
 		
 		if(pageMaker.prev){
-			str += "<li style='display:inline'><a href = '"+(pageMaker.startPage-1)+"'> << </a></li>";
+			str += "<li style='display:inline'><a href = '"+(pageMaker.startPage-1)+"'> &laquo; </a></li>";
 		}
 		
 		for(var i=pageMaker.startPage, len=pageMaker.endPage; i <= len; i++){
@@ -234,7 +434,7 @@ var sc_num="";
 		}
 		
 		if(pageMaker.next){
-			str += "<li style='display:inline'><a href = '"+(pageMaker.endPage+1)+"'> >> </a></li>";
+			str += "<li style='display:inline'><a href = '"+(pageMaker.endPage+1)+"'> &raquo; </a></li>";
 		}
 		
 		$('.pagination').html(str);
