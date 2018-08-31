@@ -24,7 +24,7 @@
 	<table id = 'paytable' border=1>
 		<tr>
 			<th>이름</th>
-			<td class="td1"><input type="text" id="name" value="값 받아오기"/></td>
+			<td class="td1"><input type="text" id="name" /></td>
 		</tr>
 		<tr>
 			<th>결제수단</th>
@@ -78,10 +78,7 @@
 	               	<button id='goback' class='btn btn-goback'>취소하기</button>          
 	           </td>
            </tr>
-       </table>
-       
-      <ul id="ticketprice"></ul>
-      
+       </table>     
 	</div>
 </body>
 <script>
@@ -136,9 +133,7 @@ $(document).ready(function(){
 //ticket값
 
 $(document).ready(function(){    
-	//var air_name="JE01";
 	$.getJSON('/seats/tic/', function(data){
-		//alert(data);
 		console.log(data.length);
 		var str="";
 		

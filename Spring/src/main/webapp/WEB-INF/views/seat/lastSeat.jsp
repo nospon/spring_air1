@@ -36,7 +36,6 @@
 $(document).ready(function(){
 	//예약번호,이름,날짜 출력
 	 $.getJSON('/seats/res/', function(data){
-		//alert(data);
 		console.log(data.length);
 		var str="";
 		
