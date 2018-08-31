@@ -36,6 +36,7 @@ public class BoardController {
 //		model.addAttribute("boardVO", boardInfo.listAll());
 //		System.out.println(model);
 	
+		
 		model.addAttribute("list", boardInfo.listCriteria(cri));
 		PageMaker pageMaker = new PageMaker();
 		pageMaker.setCri(cri);
