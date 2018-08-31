@@ -48,7 +48,7 @@ public class MemberInfoImpl implements MemberInfo{
 		return dao.listAll();
 	}
 	
-	//íšŒì›ì‚­ì œ
+	//È¸¿ø»èÁ¦
 	@Override
 	public MemberVO logremove(String id) throws Exception {
 		return dao.logremove(id);
@@ -56,7 +56,7 @@ public class MemberInfoImpl implements MemberInfo{
 	}
 	
 	
-	//íšŒì› ì •ë³´ ìˆ˜ì • ë° ì‚­ì œ 
+	//È¸¿ø Á¤º¸ ¼öÁ¤ ¹× »èÁ¦ 
 	@Override
 	public boolean checkPw(String id, String pass) throws Exception {
 		// TODO Auto-generated method stub		
