@@ -14,11 +14,20 @@
 
 <style>
 
+
+
+
 body{
 background-image: url('../resources/image/main_images/main_header.png'),url('../resources/image/main_images/main_footer2.png');
 background-repeat: repeat-x;
 background-position: left top,left bottom;
 }
+
+
+.section_All{
+	margin-left: 100px;		
+}
+
 
 
 
@@ -39,6 +48,16 @@ th, td {
 
 .td_style1{
 	background-color: rgba(216,214,202,0.3); 
+}
+
+#td_style2{
+	border: 1px solid rgba(0,0,0,0);  
+	background-color: rgba(0,0,0,0); 
+}
+
+#td_style3{
+	border: 1px solid rgba(0,0,0,0);  
+	background-color: rgba(0,0,0,0); 
 }
 
 
@@ -68,6 +87,23 @@ th, td {
 
 
 
+input[type=button] {
+    width: 200px;
+    background-color: #fe5674;
+    color: white;
+    padding: 20px 10px;    
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;       
+}
+
+input[type=button]:hover {
+    background-color: #fe123c;
+}
+
+
+
+
 #resinfo{
 	border-collapse: collapse;
 }
@@ -86,15 +122,16 @@ th, td {
 
 <%@include file="../main/header.jsp" %>
 
+<div class="section_All">
 <br><br><br>
 <table class="seat_title"><tr>
    <td><img src="../resources/image/main_images/airplain.png" height="25px" width="35px"></td>
    <td><h3><b>예약 완료 페이지 | 좌석예약</b></h3></td>
 </tr></table>
-
+<br><br>
 <div>
 	<table id="resinfo" border=1></table>
-</div>
+</div></div>
 
 <br><br><br><br><br><br><br><br><br><br>
 <br><br><br><br><br><br><br><br><br><br>
@@ -119,7 +156,9 @@ $(document).ready(function(){
     	 	     "<tr>" + "<td>" + this.name + "</td>" + 
 		    	 	      "<td>" + this.res_rnum + "</td>" +
 		    	 	      "<td>" + this.pay_date + "</td>" +"</tr>" + 
-		    	 "<tr class='tr1'>" + "<td class='td1' colspan=3>" + "<input type='button' id='goResInfo' value='예약 확인하기'/>" + "&nbsp;" +
+		    	 	     "<tr>" + "<td id='td_style3'>" + "</td>" +"</tr>" + 
+		    	 "<tr class='tr1'>" + "<td class='td1' id='td_style2' colspan=3>" + "<input type='button' id='goResInfo' value='예약 확인하기'/>"
+		    	 + "&nbsp;" + "&nbsp;" +
 		    	 				   "<input type='button' id='goMain' value='메인으로'/>" + "</td>" + "</tr>"
 		    		
 		    	 				  $("#resinfo").on("click", ".tr1 #goResInfo", function(){
