@@ -21,80 +21,56 @@
 		<tr>
 			<td style="text-align:right;">비밀번호 :</td>
 			<td>
-				<input type="text" name="pass" id="pass"  >
-			</td>
-			<td>
-				${memberVO.pass}
-			</td>
+				<input type="password" name="pass" id="pass" value="${memberVO.pass}">
+			</td>		
 		</tr>
 		<tr>
 			<td style="text-align:right;">이름 :</td>
 			<td>
-				<input type="text" name="koname" id="koname">
-			</td>
-			<td>
-				${memberVO.koname}
+				<input type="text" name="koname" id="koname" value="${memberVO.koname}">
 			</td>
 		</tr>
 		<tr>
 			<td style="text-align:right;">영어이름 :</td>
 			<td>
-				<input type="text" name="engname" id="engname" >
-			</td>
-			<td>
-				${memberVO.engname}
-			</td>
+				<input type="text" name="engname" id="engname" value="${memberVO.engname}" >
+			</td>			
 		</tr>
 		<tr>
 			<td style="text-align:right;">성별 :</td>
 			<td>
-				<input type="radio" name="gender" id="gender" value="남">남자
+				<input type="radio" name="gender" id="gender" value="남" checked>남자
 				<input type="radio" name="gender"  value="여">여자
 			</td>
 		</tr>
 		<tr>
 			<td style="text-align:right;">생일 : </td>
 			<td>
-				<input type="text" name="birth" id="birth" >
-			</td>
-			<td>
-				${memberVO.birth}
+				<input type="text" name="birth" id="birth" value="${memberVO.birth}">
 			</td>
 		</tr>
 		<tr>
 			<td style="text-align:right;">전화번호 :</td>
 			<td>
-				<input type="text" name="tel" id="tel" >
-			</td>
-			<td>
-				${memberVO.tel}
+				<input type="text" name="tel" id="tel" value="${memberVO.tel}">
 			</td>
 		</tr>
 		<tr>
 			<td style="text-align:right;">이메일 주소 :</td>
 			<td>
-				<input type="text" name="email" id="email">
-			</td>
-			<td>
-				${memberVO.email}
+				<input type="text" name="email" id="email" value="${memberVO.email}">
 			</td>
 		</tr>
 		<tr>
 			<td style="text-align:right;">여권번호 :</td>
 			<td>
-				<input type="text" name="passport" id="passport" >
-			</td>
-			<td>
-				${memberVO.passport}
+				<input type="text" name="passport" id="passport" value="${memberVO.passport}" >
 			</td>
 		</tr>
 		<tr>
 			<td style="text-align:right;">국적 :</td>
 			<td>
-				<input type="text" name="nation" id="nation" >
-			</td>
-			<td>
-				${memberVO.nation}
+				<input type="text" name="nation" id="nation" value="${memberVO.nation}">
 			</td>
 		</tr>
 		
