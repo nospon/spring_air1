@@ -103,7 +103,7 @@ var sc_num="";
 					if(c==true){		
 						formObj.attr("action","/listSeat4");
 						formObj.attr("method","get");
-						formObj.submit();						
+						formObj.submit();
 					}
 					else if(c==false){
 						location.href="/main.do";						
