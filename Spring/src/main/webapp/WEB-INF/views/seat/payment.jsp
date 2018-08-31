@@ -142,13 +142,9 @@ input[type=text],input[type=password]{
 	 
 	<table id = 'paytable' border=1>
 		<tr>
-<<<<<<< HEAD
 			<th class="td_style1">이름</th>
 			<td class="td1"><input type="text" id="name" placeholder="이름"/></td>
-=======
-			<th>이름</th>
-			<td class="td1"><input type="text" id="name" /></td>
->>>>>>> refs/remotes/origin/master
+			
 		</tr>
 		<tr>
 			<th class="td_style1">결제수단</th>
@@ -195,7 +191,6 @@ input[type=text],input[type=password]{
                <td class="td7">
                	<input type="text" id='tic_price' value='' readonly/>원
                </td>
-<<<<<<< HEAD
 	       </tr>        
        </table>
        <br><br>
@@ -212,7 +207,6 @@ input[type=text],input[type=password]{
 <br><br><br><br><br><br><br><br>
 <%@include file="../main/footer.jsp" %>	
 
-=======
 	       </tr> 
 	       <tr>
 	           <td class="td8" colspan=2 align="center">
@@ -222,7 +216,7 @@ input[type=text],input[type=password]{
            </tr>
        </table>     
 	</div>
->>>>>>> refs/remotes/origin/master
+
 </body>
 <script>
 //결제폼등록 
