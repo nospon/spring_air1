@@ -3,6 +3,7 @@ package org.zerock.controller;
 import java.util.List;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.zerock.domain.Criteria;
+import org.zerock.domain.MemberVO;
 import org.zerock.domain.PaymentVO;
 import org.zerock.domain.SeatInfoVO;
 import org.zerock.domain.SeatVO;
@@ -31,14 +33,21 @@ public class SeatOptionController {
 	
 	//ajax
 	@RequestMapping(value="/listSeat3",method=RequestMethod.GET)
-	public void listAll(Model model) throws Exception{
+	public void listAll(Model model, HttpSession sesstion) throws Exception{
+		
+		
+		MemberVO SeVO = (MemberVO) sesstion.getAttribute("login");
+		System.out.println(SeVO);
 	
 		model.addAttribute("list",service.listAll());
 	}
 	
 	@RequestMapping(value="/listSeat4",method=RequestMethod.GET)
-	public void listAll2(Model model) throws Exception{
+	public void listAll2(Model model, HttpSession sesstion) throws Exception{
 		logger.info("오는편 좌석");
+		
+		MemberVO SeVO = (MemberVO) sesstion.getAttribute("login");
+		System.out.println(SeVO);
 	}
 	
 /*	@RequestMapping(value="/listAll",method=RequestMethod.GET)
@@ -48,14 +57,20 @@ public class SeatOptionController {
 	}	*/
 	
 	@RequestMapping(value="/seatCheck", method=RequestMethod.POST)
-	public void seatcheck(@RequestParam("seat_num") String seat_num, Model model)throws Exception{
+	public void seatcheck(@RequestParam("seat_num") String seat_num, Model model, HttpSession sesstion)throws Exception{
 		model.addAttribute("listcheck",service.seatCheck(seat_num)); 
+		
+		MemberVO SeVO = (MemberVO) sesstion.getAttribute("login");
+		System.out.println(SeVO);
 	}
 	
 	//원래 결제controller
 	@RequestMapping(value="/payment",method=RequestMethod.GET)
-	public void paymentGET(PaymentVO payment,Model model) throws Exception{	
+	public void paymentGET(PaymentVO payment,Model model, HttpSession sesstion) throws Exception{	
 		logger.info("결제");
+		
+		MemberVO SeVO = (MemberVO) sesstion.getAttribute("login");
+		System.out.println(SeVO);
 	}
 	
 /*	@RequestMapping(value="/payment/{paynum}",method=RequestMethod.POST)
@@ -66,16 +81,18 @@ public class SeatOptionController {
 
 	//원래 좌석 예약 마지막 page
 		@RequestMapping(value="/lastSeat",method=RequestMethod.GET)
-		public void lastSeatGET(PaymentVO payment,Model model) throws Exception{	
+		public void lastSeatGET(PaymentVO payment,Model model, HttpSession sesstion) throws Exception{	
 			logger.info("좌석예약마지막page");
+			
+			MemberVO SeVO = (MemberVO) sesstion.getAttribute("login");
+			System.out.println(SeVO);
 		}
 		
 		@RequestMapping(value="/resInfo",method=RequestMethod.GET)
-		public void resInfoGET(Model model) throws Exception{	
+		public void resInfoGET(Model model, HttpSession sesstion) throws Exception{	
 			logger.info("예약확인page");
+			
+			MemberVO SeVO = (MemberVO) sesstion.getAttribute("login");
+			System.out.println(SeVO);
 		}
 }
-
-
-	
-	

@@ -30,9 +30,9 @@ public class BoardController {
 	
 	@RequestMapping(value = "/boardmain.do", method = RequestMethod.GET)
 	public String boardlist(@ModelAttribute("cri") Criteria cri,Model model) throws Exception {
-		logger.info("ê³„ì‹œíŒ ë¦¬ìŠ¤íŠ¸");
+		logger.info("°è½ÃÆÇ ¸®½ºÆ®");
 		
-//		//ì „ì²´ ë¦¬ìŠ¤íŠ¸ ë³´ëŠ”ê±°(ì´ê±¸ ì“°ë©´ ìˆ˜ê°€ ë§ìœ¼ë©´ ê²ë‚˜ ë²„ë²…ë¨)
+//		//ÀüÃ¼ ¸®½ºÆ® º¸´Â°Å(ÀÌ°É ¾²¸é ¼ö°¡ ¸¹À¸¸é °Ì³ª ¹ö¹÷µÊ)
 //		model.addAttribute("boardVO", boardInfo.listAll());
 //		System.out.println(model);
 		
@@ -49,7 +49,7 @@ public class BoardController {
 
 	@RequestMapping(value="/read",method=RequestMethod.GET)
 	public void readPage(@RequestParam("board_num") int board_num, Model model) throws Exception{
-		System.out.println("ê²Œì‹œíŒ ìƒì„¸ë³´ê¸°");
+		System.out.println("°Ô½ÃÆÇ »ó¼¼º¸±â");
 		
 		model.addAttribute("boardVO",boardInfo.read(board_num));
 	}
