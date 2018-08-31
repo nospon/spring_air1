@@ -41,77 +41,41 @@
 </head>
 
 <style>
-
 body {
-
 	background-image: url('resources/image/main_images/main_header.png'),
-
 		url('resources/image/main_images/main_footer.png');
-
 	background-repeat: repeat-x;
-
 	background-position: left top, left bottom;
-
 }
-
  
-
 /*배너*/
-
 .banner_ul {
-
 	list-style-type: none;
-
 	padding: 0;
-
 	margin: 0;
-
 }
-
  
-
 .banner_ul>li {
-
 	border: 1px solid #ddd;
-
 	margin-top: -1px;
-
 	background-image: url('resources/image/main_images/main_banner.png');
-
 	background-repeat: no-repeat;
-
 	padding: 57px;
-
 	text-decoration: none;
-
 	font-size: 18px;
-
 	color: black;
-
 	display: block;
-
 	position: relative;
-
 }
-
  
-
 .close {
-
 	cursor: pointer;
-
 	position: absolute;
-
 	top: 18%;
-
 	right: 1%;
-
 	padding: 12px 16px;
-
 	transform: translate(0%, -50%);
-
 }
-
 </style>
 
 <title>Insert title here</title>
@@ -137,15 +101,11 @@ body {
  
 
 			<%
-
 				Object id = session.getAttribute("login");
-
 			%>
 
 			<%
-
 				if (id == null) {
-
 			%>
 
  
@@ -153,17 +113,13 @@ body {
 			<a href="/join.do">회원가입</a>&nbsp;&nbsp; <a href="/login.do">로그인</a>&nbsp;&nbsp;
 
 			<%
-
 				} else {
-
 			%>
 
 			<a href="/logout.do">로그아웃</a>&nbsp;&nbsp;
 
 			<%
-
 				}
-
 			%>
 
 			<a href="/qna_board.do">고객센터</a>&nbsp;&nbsp;
@@ -543,23 +499,14 @@ body {
  
 
 	<script>
-
 		var closebtns = document.getElementsByClassName("close");
-
 		var i;
-
  
-
 		for (i = 0; i < closebtns.length; i++) {
-
 			closebtns[i].addEventListener("click", function() {
-
 				this.parentElement.style.display = 'none';
-
 			});
-
 		}
-
 	</script>
 
 	<!-- 배너 끝 -->
@@ -1039,237 +986,120 @@ body {
  
 
 <script>
-
  
-
 /* 이중셀렉트박스 */
-
 function change(departures) {
-
 	var f = document.form;
-
 	if (departures == "") {
-
 		num = new Array("서울(김포)");
-
 		vnum = new Array("");
-
 	} else if (departures == "1") {
-
 		num = new Array("서울(김포)", "제주");
-
 		vnum = new Array("1", "2");
-
 	} else if (departures == "2") {
-
 		num = new Array("부산", "제주");
-
 		vnum = new Array("1", "2");
-
 	} else if (departures == "3") {
-
 		num = new Array("부산", "서울(김포)");
-
 		vnum = new Array("1", "2");
-
 	}
-
 	for (i = 0; i < f.destination.length; i++) {
-
 		f.destination.options[0] = null;
-
 	}
-
 	for (i = 0; i < num.length; i++) {
-
 		f.destination.options[i] = new Option(num[i], vnum[i]);
-
 	}
-
 }
-
 /* 달력 */
-
 $(function() {
-
 	from = $("#from1").datepicker({
-
 		/* defaultDate : "+1w",  */
-
 		minDate : 0,
-
 		numberOfMonths : 2,
-
 		altField : "#alternate",
-
 		altFormat : "yy-mm-dd DD"
-
 	}).on("change", function() {
-
 		to.datepicker("option", "minDate", getDate(this));
-
  
-
 		var date = new Date($("#from1").datepicker({
-
  
-
 		}).val()), week = new Array('일', '월', '화', '수', '목', '금', '토');
-
 		if (week[date.getDay()] != undefined) {
-
 		}
-
 	}), to = $("#to1").datepicker({
-
 		/* defaultDate : "+1w", */
-
 		minDate : 0,
-
 		numberOfMonths : 2,
-
 		altField : "#alternate2",
-
 		altFormat : "yy-mm-dd DD"
-
 	}).on("change", function() {
-
 		from.datepicker("option", "maxDate", getDate(this));
-
  
-
 		var date = new Date($("#to1").datepicker({
-
  
-
 		}).val()), week = new Array('일', '월', '화', '수', '목', '금', '토');
-
 		if (week[date.getDay()] != undefined) {
-
  
-
 		}
-
 	});
-
 	function getDate(element) {
-
 		var date;
-
 		try {
-
 			date = $.datepicker.parseDate(dateFormat, element.value);
-
 		} catch (error) {
-
 			date = null;
-
 		}
-
 		return date;
-
 	}
-
 });
-
  
-
 /* 오늘날짜 */
-
 $(document).ready(
-
 		function() {
-
 			$("#from1").datepicker({});
-
 			var myDate = new Date();
-
 			var month = myDate.getMonth() + 1;
-
 			if (month < 10) {
-
 				month = "0" + month;
-
 			}
-
  
-
 			var prettyDate = myDate.getFullYear() + '-' + month + '-'
-
 					+ myDate.getDate();
-
 			$("#from1").val(prettyDate);
-
  
-
 		});
-
 $(document).ready(
-
 		function() {
-
 			$("#to1").datepicker({});
-
 			var myDate = new Date();
-
 			var month = myDate.getMonth() + 1;
-
 			if (month < 10) {
-
 				month = "0" + month;
-
 			}
-
 			var prettyDate = myDate.getFullYear() + '-' + month + '-'
-
 					+ myDate.getDate();
-
 			$("#to1").val(prettyDate);
-
 			
-
 		});
-
 /* 달력 한글화 */
-
 jQuery(function($) {
-
 	$.datepicker.regional['ko'] = {
-
  
-
 		monthNames : [ '1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월',
-
 				'9월', '10월', '11월', '12월' ],
-
 		monthNamesShort : [ '1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월',
-
 				'9월', '10월', '11월', '12월' ],
-
 		dayNames : [ '일', '월', '화', '수', '목', '금', '토' ],
-
 		dayNamesShort : [ '일', '월', '화', '수', '목', '금', '토' ],
-
 		dayNamesMin : [ '일', '월', '화', '수', '목', '금', '토' ],
-
 		weekHeader : 'Wk',
-
 		dateFormat : 'yy-mm-dd',
-
 		firstDay : 0,
-
 		isRTL : false,
-
 		showMonthAfterYear : true,
-
 		yearSuffix : '년'
-
 	};
-
 	$.datepicker.setDefaults($.datepicker.regional['ko']);
-
 });
-
  
-
 </script>
