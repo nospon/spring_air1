@@ -38,7 +38,7 @@ class ScheduleController {
 
 	@RequestMapping(value = "/listAll", method = RequestMethod.GET)
 	public String listAll(HttpSession sesstion,Model model) throws Exception {
-		logger.info("Ï†ÑÏ≤¥Î¶¨Ïä§Ìä∏ Î≥¥Í∏∞");
+		logger.info("¿¸√º∏ÆΩ∫∆Æ ∫∏±‚");
 		MemberVO SeVO = (MemberVO) sesstion.getAttribute("login");
 		System.out.println(SeVO);
 
@@ -48,7 +48,7 @@ class ScheduleController {
 
 @RequestMapping(value = "/list", method = RequestMethod.GET)
 	public String list(HttpSession sesstion,Model model) throws Exception {
-		logger.info("Î¶¨Ïä§Ìä∏ Î≥¥Í∏∞");
+		logger.info("∏ÆΩ∫∆Æ ∫∏±‚");
 		MemberVO SeVO = (MemberVO) sesstion.getAttribute("login");
 		System.out.println(SeVO);
 
@@ -58,7 +58,7 @@ class ScheduleController {
 
 @RequestMapping(value = "/schedule", method = RequestMethod.GET)
 public String schedule(HttpSession sesstion,Model model) throws Exception {
-	logger.info("Ïö¥Ìï≠ÏùºÏ†ïÎ≥¥Í∏∞");
+	logger.info("øÓ«◊¿œ¡§∫∏±‚");
 	MemberVO SeVO = (MemberVO) sesstion.getAttribute("login");
 	System.out.println(SeVO);
 
@@ -73,7 +73,7 @@ public String schedule(HttpSession sesstion,Model model) throws Exception {
 	}*/
 	 @RequestMapping(value="/save",method=RequestMethod.GET)
 	    public void createGET(HttpSession sesstion,Schedule_InfoVO vo, Model model) throws Exception{
-	        System.out.println(" GETÎ∞©Ïãù");
+	        System.out.println(" GETπÊΩƒ");
 	        
 	    }
 	 @RequestMapping(value="/save",method=RequestMethod.POST)
@@ -81,7 +81,7 @@ public String schedule(HttpSession sesstion,Model model) throws Exception {
 		 MemberVO SeVO = (MemberVO) sesstion.getAttribute("login");
 			System.out.println(SeVO);
 	
-		 System.out.println(" POSTÎ∞©Ïãù");
+		 System.out.println(" POSTπÊΩƒ");
 			System.out.println(vo.toString());
 			System.out.println(vo.getSc_num1());
 			System.out.println(vo.getAir_name1());

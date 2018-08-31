@@ -46,7 +46,7 @@ public class SeatOptionController {
 	
 	@RequestMapping(value="/listSeat4",method=RequestMethod.GET)
 	public String listAll2(Model model, HttpSession sesstion) throws Exception{
-		logger.info("ì˜¤ëŠ”í¸ ì¢Œì„");
+		logger.info("¿À´ÂÆí ÁÂ¼®");
 		
 		MemberVO SeVO = (MemberVO) sesstion.getAttribute("login");
 		System.out.println(SeVO);
@@ -68,10 +68,10 @@ public class SeatOptionController {
 		System.out.println(SeVO);
 	}
 	
-	//ì›ë˜ ê²°ì œcontroller
+	//¿ø·¡ °áÁ¦controller
 	@RequestMapping(value="/payment",method=RequestMethod.GET)
 	public String paymentGET(PaymentVO payment,Model model, HttpSession sesstion) throws Exception{	
-		logger.info("ê²°ì œ");
+		logger.info("°áÁ¦");
 		
 		MemberVO SeVO = (MemberVO) sesstion.getAttribute("login");
 		System.out.println(SeVO);
@@ -81,14 +81,14 @@ public class SeatOptionController {
 	
 /*	@RequestMapping(value="/payment/{paynum}",method=RequestMethod.POST)
 	public void paymentPOST(@RequestParam("pay_num") int pay_num, Model model) throws Exception{	
-		logger.info("ê²°ì œ pay_num ë„˜ê¸°ê¸°");
+		logger.info("°áÁ¦ pay_num ³Ñ±â±â");
 		model.addAttribute("paymentVO",service.paynumread(pay_num)); 
 	}*/
 
-	//ì›ë˜ ì¢Œì„ ì˜ˆì•½ ë§ˆì§€ë§‰ page
+	//¿ø·¡ ÁÂ¼® ¿¹¾à ¸¶Áö¸· page
 		@RequestMapping(value="/lastSeat",method=RequestMethod.GET)
 		public String lastSeatGET(PaymentVO payment,Model model, HttpSession sesstion) throws Exception{	
-			logger.info("ì¢Œì„ì˜ˆì•½ë§ˆì§€ë§‰page");
+			logger.info("ÁÂ¼®¿¹¾à¸¶Áö¸·page");
 			
 			MemberVO SeVO = (MemberVO) sesstion.getAttribute("login");
 			System.out.println(SeVO);
@@ -98,7 +98,7 @@ public class SeatOptionController {
 		
 		@RequestMapping(value="/resInfo",method=RequestMethod.GET)
 		public String resInfoGET(Model model, HttpSession sesstion) throws Exception{	
-			logger.info("ì˜ˆì•½í™•ì¸page");
+			logger.info("¿¹¾àÈ®ÀÎpage");
 			
 			MemberVO SeVO = (MemberVO) sesstion.getAttribute("login");
 			System.out.println(SeVO);
