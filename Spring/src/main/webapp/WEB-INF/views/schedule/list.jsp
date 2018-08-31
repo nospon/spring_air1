@@ -475,7 +475,7 @@ input[type=number]{
 			<th class="plan_th2">성인</th>
 			<th class="plan_th2" id="adult_num">명</th>
 			<th class="plan_th1">&nbsp;</th>
-			<th class="plan_th1" id="d_price"></th>
+			<th class="plan_th1" id="d_price">(원)</th>
 		</tr>
 
 	</table>
@@ -797,51 +797,63 @@ input[type=number]{
 		section.style.display = '';
 	}
 
-	
-
+var test="";
 	/* 성인 수 */
 	$(":input").on('keyup mouseup', function() {
 		var num = $("#adult").val();
-		$("#adult_num").text(num);
+		test=num;
+		$("#adult_num").text(num +"명");
 	}).trigger('mouseup');
 	$(":input").on('keyup mouseup', function() {
 		var num = $("#adult").val();
-		$("#adult_num2").text(num);
+		$("#adult_num2").text(num+"명");
 	}).trigger('mouseup');
 
+	 
+	
+	/* 요금 합계 */
+	 var total="";
+	
+	 
 	 /* 시간, 요금 */
 
 	   function Departure(d) {
 	      var isChecked = $(d).is(":checked");
 	      var txt;
 
-	      if (isChecked == true) {
-	         d_time = $(d).parent().parent().find('label.d_time').text();
-	         d_price = $(d).parent().parent().find('label.d_price').text();
-	         d_num = $(d).parent().parent().find('label.d_num').text();
-	         d_airname = $(d).parent().parent().find('label.d_airname').text();
+	    
+	        var d_time = $(d).parent().parent().find('label.d_time').text();
+	        var d_price = $(d).parent().parent().find('label.d_price').text();
+	        var d_num = $(d).parent().parent().find('label.d_num').text();
+	        var d_airname = $(d).parent().parent().find('label.d_airname').text();
 	         $('#d_time').text(d_time);
-	         $('#d_price').text(d_price);
+	         $('#d_price').text(d_price +" (원)");
 	         $('#d_num').val(d_num);
 	         $('#d_airname').val(d_airname);
-
-	      }
+	         d_price =parseInt(d_price +" (원)");
+	         total=d_price;
+	     
+	      
+			
 	   }
 
 	   function Arrival(a) {
 	      var isChecked = $(a).is(":checked");
 	      var txt;
 
-	      if (isChecked == true) {
-	         a_time = $(a).parent().parent().find('label.a_time').text();
-	         a_price = $(a).parent().parent().find('label.a_price').text();
-	         a_num = $(a).parent().parent().find('label.a_num').text();
-	         a_airname = $(a).parent().parent().find('label.a_airname').text();
+	   
+	        var a_time = $(a).parent().parent().find('label.a_time').text();
+	        var a_price = $(a).parent().parent().find('label.a_price').text();
+	        var a_num = $(a).parent().parent().find('label.a_num').text();
+	        var a_airname = $(a).parent().parent().find('label.a_airname').text();
 	         $('#a_time').text(a_time);
-	         $('#a_price').text(a_price);
+	         $('#a_price').text(a_price +" (원)");
 	         $('#a_num').val(a_num);
 	         $('#a_airname').val(a_airname);
-	      }
+	         a_price =parseInt(a_price );
+	        total=(total+a_price)*test;
+	        $('#total').text(total+" (원)");
+	      
 	   }
 
 	  /* 가는 여정 */
