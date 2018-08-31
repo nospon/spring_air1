@@ -88,7 +88,7 @@ public String schedule(HttpSession sesstion,Model model) throws Exception {
 			service.insert(vo);
 			rttr.addFlashAttribute("msg","success");
 					
-			return "redirect:/seat/listSeat3";
+			return "redirect:/listSeat3";
 		}
 
 	@RequestMapping(value = "/listAll/{de_place}/{ar_place}/{de_date}", method = RequestMethod.GET)

@@ -154,7 +154,7 @@ $(document).ready(function(){
 							});											
 						}
 						else if(c==false){
-							location.href="/seat/resInfo";						
+							location.href="/resInfo";						
 						}
 					});
 				});

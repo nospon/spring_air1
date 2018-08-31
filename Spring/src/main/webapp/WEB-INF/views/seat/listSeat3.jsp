@@ -120,7 +120,7 @@ var sc_num="";
 					var formObj=$("form[role='form']");	
 					console.log(formObj);
 					if(c==true){		
-						formObj.attr("action","/seat/listSeat4");
+						formObj.attr("action","/listSeat4");
 						formObj.attr("method","get");
 						formObj.submit();
 						//$('.seatLi button').attr('disabled', true);

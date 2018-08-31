@@ -116,7 +116,7 @@
 					var formObj=$("form[role='form']");	
 					console.log(formObj);
 					if(c==true){		
-						formObj.attr("action","/seat/payment");
+						formObj.attr("action","/payment");
 						formObj.attr("method","get");
 						formObj.submit();
 						//$('.seatLi button').attr('disabled', true);

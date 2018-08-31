@@ -113,7 +113,7 @@ $("#gopay").on("click",function(){
 			console.log("result : " + result);
 			if(result=='SUCCESS'){
 				alert('결제가 완료되었습니다.');
-				location.href="/seat/lastSeat";		
+				location.href="/lastSeat";		
 			}
 		}
 	});
@@ -128,7 +128,7 @@ $(document).ready(function(){
 			location.href="/main.do";		
 		}
 		else if(c==false){
-			location.href="/seat/payment";
+			location.href="/payment";
 		}	
 	});
 });

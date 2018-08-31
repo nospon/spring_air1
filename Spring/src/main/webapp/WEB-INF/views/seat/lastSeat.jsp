@@ -52,11 +52,11 @@ $(document).ready(function(){
 		    	 				   "<input type='button' id='goMain' value='메인으로'/>" + "</td>" + "</tr>"
 		    		
 		    	 				  $("#resinfo").on("click", ".tr1 #goResInfo", function(){
-		    	 						location.href="/seat/resInfo";
+		    	 						location.href="/resInfo";
 		    	 					});
 		    	 					
 		    	 					$("#resinfo").on("click", ".tr1 #goMain",function(){
-		    	 						location.href="";
+		    	 						location.href="/main.do";
 		    	 					});
 		});
 		$("#resinfo").html(str);
