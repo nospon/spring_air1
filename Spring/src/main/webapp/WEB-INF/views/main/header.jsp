@@ -20,8 +20,6 @@
 <body>
 
 
-
-
 <div id="wrapper">
 <!-- header -->
 <div class="header">   	
