@@ -58,6 +58,7 @@ th, td {
 	<table id="passenger_details"></table>
 </div>
 
+<img src="resources/image/main_images/seatlayout.png">
 <div class='span'><span>[ A,F는 창가 좌석입니다. ]</span></div>
 
 <div id="seatYN" style="display: none">	
