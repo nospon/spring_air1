@@ -235,7 +235,6 @@ body {
 
 										<span class="cell col2"><a href="updatejoin.do">회원정보 수정</a></span> <span></span>
 
-
 								</div>
 
 							</div>
