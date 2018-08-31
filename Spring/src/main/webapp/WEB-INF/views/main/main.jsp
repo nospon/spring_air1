@@ -83,10 +83,6 @@ body {
 
 
 
-
-
-
-
 	<div id="wrapper">
 
 		<!-- header -->
@@ -122,10 +118,6 @@ body {
 
 
 		</div>
-
-
-
-
 
 
 
@@ -169,9 +161,9 @@ body {
 
 								<div class="row">
 
-									<span class="cell col1"><a href="list">항공권 예매</a></span> 
-										class="cell col2"><a href="resInfo">예매내역 확인</a></span> 
-										class="cell col3"><a href="/qna_board.do">고객 센터</a></span>
+									<span class="cell col1"><a href="list">항공권 예매</a></span>
+									class="cell col2"><a href="resInfo">예매내역 확인</a></span> class="cell
+									col3"><a href="/qna_board.do">고객 센터</a></span>
 
 								</div>
 
@@ -179,13 +171,10 @@ body {
 
 								<div class="row">
 
-									<span class="cell col1"><a href="schedule">스케줄 조회</a></span> 
-
-										class="cell col2"><a href="#">회원정보 수정</a></span>
-
-
-										class="cell col2"><a href="updatejoin.do">회원정보 수정</a></span> 
-
+									<span class="cell col1"><a href="schedule">스케줄 조회</a></span> <span class
+											="cellcol2">
+										<a href="#">회원정보 수정</a></span> <span class ="cellcol2">
+										<a href="updatejoin.do">회원정보 수정</a></span>
 
 
 
@@ -231,12 +220,10 @@ body {
 
 								<div class="row">
 
-									<span class="cell col1"><a href="schedule">스케줄 조회</a></span> 
+									<span class="cell col1"><a href="schedule">스케줄 조회</a></span>
 
-										class="cell col2"><a href="#">회원정보 수정</a></span> 
-
-
-										class="cell col2"><a href="updatejoin.do">회원정보 수정</a></span> <span></span>
+									class="cell col2"><a href="#">회원정보 수정</a></span> class="cell col2"><a
+										href="updatejoin.do">회원정보 수정</a></span> <span></span>
 
 
 
@@ -251,8 +238,6 @@ body {
 					</div>
 
 				</div>
-
-
 
 
 
@@ -286,12 +271,10 @@ body {
 
 								<div class="row">
 
-									<span class="cell col1"><a href="schedule">스케줄 조회</a></span> 
+									<span class="cell col1"><a href="schedule">스케줄 조회</a></span>
 
-										class="cell col2"><a href="#">회원정보 수정</a></span> 
-
-
-										class="cell col2"><a href="updatejoin.do">회원정보 수정</a></span>
+									class="cell col2"><a href="#">회원정보 수정</a></span> class="cell col2"><a
+										href="updatejoin.do">회원정보 수정</a></span>
 
 
 								</div>
@@ -398,8 +381,7 @@ body {
 
 					<br> 오는날<br> <input type="text" id="to1" name="to1">
 
-					<br>
-					<br>
+					<br> <br>
 
 
 
@@ -436,27 +418,11 @@ body {
 
 
 
-
-
-
-
-
-
-
-
-
-
 	<!-- content 2 시작 -->
 
 	<%@include file="section.jsp"%>
 
 	<!-- content 2 끝 -->
-
-
-
-
-
-
 
 
 
@@ -495,8 +461,6 @@ body {
 	</script>
 
 	<!-- 배너 끝 -->
-
-
 
 
 
@@ -604,8 +568,6 @@ body {
 
 
 
-
-
 	<!-- content 2 시작 -->
 
 	<div id="menubar2">
@@ -641,14 +603,6 @@ body {
 
 
 
-
-
-
-
-
-
-
-
 	<!-- content 3 -->
 
 	<div class="con3">
@@ -664,8 +618,6 @@ body {
 			</tr>
 
 		</table>
-
-
 
 
 
@@ -758,14 +710,6 @@ body {
 
 
 
-
-
-
-
-
-
-
-
 		<!-- content 4 -->
 
 		<div class="con4">
@@ -819,8 +763,6 @@ body {
 
 
 
-
-
 				<div class="row">
 
 					<span class="cell col11"><a href="list">항공권 예매</a></span> <span
@@ -834,22 +776,14 @@ body {
 
 
 
-
-
-
-
 				<div class="row">
 
 					<span class="cell col11"><a href="schedule">스케줄 조회</a></span>
 
-						class="cell col12"><a href="#">회원정보 수정&nbsp;&nbsp;</a></span> 
-
-
-						class="cell col12"><a href="updatejoin.do">회원정보 수정&nbsp;&nbsp;</a></span> <span
-
-
-						class="cell col13"><a href="/qna_board.do">고객 센터</a></span> 
-						class="cell col14"><a href="/join.do">회원가입</a></span>
+					class="cell col12"><a href="#">회원정보 수정&nbsp;&nbsp;</a></span> class="cell
+					col12"><a href="updatejoin.do">회원정보 수정&nbsp;&nbsp;</a></span> <span
+						class="cell col13"><a href="/qna_board.do">고객 센터</a></span>
+					class="cell col14"><a href="/join.do">회원가입</a></span>
 
 				</div>
 
@@ -910,26 +844,6 @@ body {
 		</div>
 
 	</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
