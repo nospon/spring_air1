@@ -35,7 +35,7 @@ public class BoardController {
 //		//전체 리스트 보는거(이걸 쓰면 수가 많으면 겁나 버벅됨)
 //		model.addAttribute("boardVO", boardInfo.listAll());
 //		System.out.println(model);
-		
+	
 		model.addAttribute("list", boardInfo.listCriteria(cri));
 		PageMaker pageMaker = new PageMaker();
 		pageMaker.setCri(cri);
