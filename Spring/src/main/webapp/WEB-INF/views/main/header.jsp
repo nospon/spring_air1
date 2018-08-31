@@ -86,7 +86,7 @@
 
 <div class="row">
 <span class="cell col1"><a href="schedule">스케줄 조회</a></span>
-<span class="cell col2"><a href="#">회원정보 수정</a></span>
+<span class="cell col2"><a href="updatejoin.do">회원정보 수정</a></span>
 <span class="cell col3"></span>
 
 
