@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
+
 	pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
@@ -8,6 +9,7 @@
 <head>
 
 <link rel="stylesheet"
+
 	href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
 <link rel="stylesheet" href="/resources/demos/style.css">
@@ -19,6 +21,7 @@
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 <link rel="icon" type="image/ico"
+
 	href="resources/image/main_images/Favicon.ico" />
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -28,49 +31,87 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
 <link rel="stylesheet"
+
 	href="${pageContext.request.contextPath}/resources/css/main.css"
+
 	type="text/css">
 
-
+ 
 
 </head>
 
 <style>
+
 body {
+
 	background-image: url('resources/image/main_images/main_header.png'),
+
 		url('resources/image/main_images/main_footer.png');
+
 	background-repeat: repeat-x;
+
 	background-position: left top, left bottom;
+
 }
+
+ 
 
 /*배너*/
+
 .banner_ul {
+
 	list-style-type: none;
+
 	padding: 0;
+
 	margin: 0;
+
 }
+
+ 
 
 .banner_ul>li {
+
 	border: 1px solid #ddd;
+
 	margin-top: -1px;
+
 	background-image: url('resources/image/main_images/main_banner.png');
+
 	background-repeat: no-repeat;
+
 	padding: 57px;
+
 	text-decoration: none;
+
 	font-size: 18px;
+
 	color: black;
+
 	display: block;
+
 	position: relative;
+
 }
 
+ 
+
 .close {
+
 	cursor: pointer;
+
 	position: absolute;
+
 	top: 18%;
+
 	right: 1%;
+
 	padding: 12px 16px;
+
 	transform: translate(0%, -50%);
+
 }
+
 </style>
 
 <title>Insert title here</title>
@@ -79,13 +120,13 @@ body {
 
 <body>
 
+ 
 
+ 
 
+ 
 
-
-
-
-
+ 
 
 	<div id="wrapper">
 
@@ -93,63 +134,73 @@ body {
 
 		<div class="header">
 
-
+ 
 
 			<%
+
 				Object id = session.getAttribute("login");
+
 			%>
 
 			<%
+
 				if (id == null) {
+
 			%>
 
-
+ 
 
 			<a href="/join.do">회원가입</a>&nbsp;&nbsp; <a href="/login.do">로그인</a>&nbsp;&nbsp;
 
 			<%
+
 				} else {
+
 			%>
 
 			<a href="/logout.do">로그아웃</a>&nbsp;&nbsp;
 
 			<%
+
 				}
+
 			%>
 
 			<a href="/qna_board.do">고객센터</a>&nbsp;&nbsp;
 
-
+ 
 
 		</div>
 
+ 
 
+ 
 
+ 
 
-
-
-
-
+ 
 
 		<!-- nav -->
 
 		<div class="nav">
 
+ 
 
-
-
+ 
 
 			<div class="navbar">
 
 				<div class="navbar_home">
 
 					<a href="/main.do"><img
+
 						src="resources/image/main_images/logo.PNG" height="70px"
+
 						width="212px"></a>
 
 				</div>
 
-
+ 
 
 				<div class="dropdown">
 
@@ -163,33 +214,33 @@ body {
 
 						<div class="menu_header">
 
-
+ 
 
 							<div id="table">
 
 								<div class="row">
 
-									<span class="cell col1"><a href="list">항공권 예매</a></span> 
-										class="cell col2"><a href="resInfo">예매내역 확인</a></span> 
+									<span class="cell col1"><a href="list">항공권 예매</a></span> <span
+
+										class="cell col2"><a href="resInfo">예매내역 확인</a></span> <span
+
 										class="cell col3"><a href="/qna_board.do">고객 센터</a></span>
 
 								</div>
 
-
+ 
 
 								<div class="row">
 
-									<span class="cell col1"><a href="schedule">스케줄 조회</a></span> 
+									<span class="cell col1"><a href="schedule">스케줄 조회</a></span> <span
 
-										
+										class="cell col2"><a href="updatejoin.do">회원정보 수정</a></span> <span
 
+										class="cell col3"></span>
 
-									<span class="cell col2"><a href="updatejoin.do">회원정보 수정</a></span> 
+ 
 
-
-
-
-
+ 
 
 								</div>
 
@@ -201,7 +252,7 @@ body {
 
 				</div>
 
-
+ 
 
 				<div class="dropdown">
 
@@ -215,25 +266,33 @@ body {
 
 						<div class="menu_header">
 
-
+ 
 
 							<div id="table">
 
 								<div class="row">
 
 									<span class="cell col1"><a href="list">항공권 예매</a></span> <span
+
 										class="cell col2"><a href="resInfo">예매내역 확인</a></span> <span
+
 										class="cell col3"><a href="/qna_board.do">고객 센터</a></span>
 
 								</div>
 
-
+ 
 
 								<div class="row">
 
-									<span class="cell col1"><a href="schedule">스케줄 조회</a></span> 
+									<span class="cell col1"><a href="schedule">스케줄 조회</a></span> <span
 
-										<span class="cell col2"><a href="updatejoin.do">회원정보 수정</a></span> <span></span>
+										class="cell col2"><a href="updatejoin.do">회원정보 수정</a></span> <span
+
+										class="cell col3"></span>
+
+ 
+
+ 
 
 								</div>
 
@@ -245,11 +304,11 @@ body {
 
 				</div>
 
+ 
 
+ 
 
-
-
-
+ 
 
 				<div class="dropdown">
 
@@ -263,27 +322,33 @@ body {
 
 						<div class="menu_header">
 
-
+ 
 
 							<div id="table">
 
 								<div class="row">
 
 									<span class="cell col1"><a href="list">항공권 예매</a></span> <span
+
 										class="cell col2"><a href="resInfo">예매내역 확인</a></span> <span
+
 										class="cell col3"><a href="/qna_board.do">고객 센터</a></span>
 
 								</div>
 
-
+ 
 
 								<div class="row">
 
-									<span class="cell col1"><a href="schedule">스케줄 조회</a></span>
+									<span class="cell col1"><a href="schedule">스케줄 조회</a></span> <span
 
+										class="cell col2"><a href="updatejoin.do">회원정보 수정</a></span> <span
 
-								    <span class="cell col2"><a href="updatejoin.do">회원정보 수정</a></span>
+										class="cell col3"></span>
 
+ 
+
+ 
 
 								</div>
 
@@ -301,9 +366,9 @@ body {
 
 	</div>
 
+ 
 
-
-
+ 
 
 	<!-- content -->
 
@@ -323,22 +388,25 @@ body {
 
 				<form action="">
 
-					<input type="radio" class="w3-radio" name="way" value="roundtrip"
-						checked>&nbsp;왕복<input type="radio" class="w3-radio"
-						name="way" id="oneway" value="남">&nbsp;편도&nbsp;&nbsp;&nbsp;
-					<br> <br>
+					<input type="radio"
+
+						class="w3-radio" name="way" value="roundtrip" checked>&nbsp;왕복<input type="radio" class="w3-radio" name="way" id="oneway"
+
+						value="남">&nbsp;편도&nbsp;&nbsp;&nbsp; <br>
+
+					<br>
 
 				</form>
 
+ 
 
-
-
+ 
 
 				<!-- 미정 -->
 
 				<!-- 구간선택 -->
 
-
+ 
 
 				<div class="style">
 
@@ -347,9 +415,10 @@ body {
 						<form name=form>
 
 							출발지<select name="departures" id="departures" class="departures"
+
 								onchange="change(this.value);">
 
-
+ 
 
 								<option value="1">부산</option>
 
@@ -357,16 +426,18 @@ body {
 
 								<option value="3">제주</option>
 
-
+ 
 
 							</select>
+
 					</div>
 
-
+ 
 
 					<div class="con1_margin">
 
 						도착지 <select name="destination" id="destination"
+
 							class="destination">
 
 							<option value="">서울(김포)</option>
@@ -375,13 +446,13 @@ body {
 
 						</select>
 
-
+ 
 
 						</form>
 
 					</div>
 
-
+ 
 
 					<!-- 날짜선택 -->
 
@@ -389,21 +460,23 @@ body {
 
 					<br> 오는날<br> <input type="text" id="to1" name="to1">
 
-					<br>
-					<br>
+					<br><br>
 
+					
 
-
-
+					
 
 					<!-- 연령선택 -->
 
 					성인&nbsp; <input type="number" id="adult" value="1"
+
 						onchange="pay();" min="1" max="2"> 소아&nbsp; <input
+
 						type="number" id="child" value="0" onchange="pay();" min="1"
+
 						max="2"> <br> <br>
 
-
+ 
 
 					<!-- 확인 -->
 
@@ -423,19 +496,19 @@ body {
 
 	<!-- 미정 -->
 
+ 
 
+ 
 
+ 
 
+ 
 
+ 
 
+ 
 
-
-
-
-
-
-
-
+ 
 
 	<!-- content 2 시작 -->
 
@@ -443,15 +516,15 @@ body {
 
 	<!-- content 2 끝 -->
 
+ 
 
+ 
 
+ 
 
+ 
 
-
-
-
-
-
+ 
 
 	<br>
 
@@ -467,12 +540,15 @@ body {
 
 	</ul>
 
-
+ 
 
 	<script>
+
 		var closebtns = document.getElementsByClassName("close");
 
 		var i;
+
+ 
 
 		for (i = 0; i < closebtns.length; i++) {
 
@@ -483,15 +559,16 @@ body {
 			});
 
 		}
+
 	</script>
 
 	<!-- 배너 끝 -->
 
+ 
 
+ 
 
-
-
-
+ 
 
 	<!-- 공지사항 -->
 
@@ -510,8 +587,11 @@ body {
 		</table>
 
 		<a
+
 			onclick="this.nextSibling.style.display=(this.nextSibling.style.display=='none')?'block':'none';"
+
 			href="javascript:void(0)"> 공지사항&nbsp;<img
+
 			src="resources/image/main_images/arrow-down.png" width=10px;>
 
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 새로운 공지가 추가되었습니다
@@ -522,7 +602,7 @@ body {
 
 			<table>
 
-
+ 
 
 				<tr>
 
@@ -531,6 +611,7 @@ body {
 					<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 						<a href="#">마닐라(MNL)공항 폐쇄 관련 안내&nbsp;<img
+
 							src="resources/image/main_images/new.png"></a>
 
 					</td>
@@ -548,6 +629,7 @@ body {
 					<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 						<a href="#">스프링에어 신입/경력사원 상시채용&nbsp;<img
+
 							src="resources/image/main_images/new.png"></a>
 
 					</td>
@@ -565,6 +647,7 @@ body {
 					<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 						<a href="#">신규취항 이벤트 관련 공지&nbsp;<img
+
 							src="resources/image/main_images/new.png"></a>
 
 					</td>
@@ -575,7 +658,7 @@ body {
 
 				</tr>
 
-
+ 
 
 			</table>
 
@@ -591,11 +674,11 @@ body {
 
 	<br>
 
+ 
 
+ 
 
-
-
-
+ 
 
 	<!-- content 2 시작 -->
 
@@ -604,23 +687,24 @@ body {
 		<div class="menubar2">
 
 			<br> <br> <a href="#">국내 여행</a> <br> <br> <a
+
 				href="#">해외 여행</a>
 
-
+ 
 
 		</div>
 
 	</div>
 
+ 
 
-
-
+ 
 
 	<%@include file="content.jsp"%>
 
 	<!-- // content 2 끝 -->
 
-
+ 
 
 	</div>
 
@@ -628,17 +712,17 @@ body {
 
 	<br>
 
+ 
 
+ 
 
+ 
 
+ 
 
+ 
 
-
-
-
-
-
-
+ 
 
 	<!-- content 3 -->
 
@@ -656,19 +740,22 @@ body {
 
 		</table>
 
+ 
 
+ 
 
-
-
-
+ 
 
 		<!-- content 3-1 -->
 
 		<div class="con3_border1">
 
 			<a href="#"> <img
+
 				src="resources/image/main_images/main_event1.PNG" alt="신규취항 이벤트"
+
 				width="268px" height="180px"></a> <br> <br> <span
+
 				class="con3_btn1"><a href="#"><b>특가 이벤트</b></a></span>
 
 			<h6>서울>LA 신규취항 이벤트</h6>
@@ -679,17 +766,20 @@ body {
 
 		</div>
 
+ 
 
-
-
+ 
 
 		<!-- content 3-2 -->
 
 		<div class="con3_border2">
 
 			<a href="#"> <img
+
 				src="resources/image/main_images/main_event3.PNG" alt="특별한 혜택"
+
 				width="268px" height="178px"><br> <br> <span
+
 				class="con3_btn2"><b>홍보/안내</b></span>
 
 				<h5>SPRING AIR만의 특별한 혜택!!</h5> <span class="con3_font">"두근두근"
@@ -700,16 +790,18 @@ body {
 
 		</div>
 
+ 
 
-
-
+ 
 
 		<!-- content 3-3 -->
 
 		<div class="con3_border2">
 
 			<a href="#"> <img
+
 				src="resources/image/main_images/main_event2.PNG"
+
 				alt="1주년 기념 특가 이벤트" width="268px" height="178px"><br> <br>
 
 				<span class="con3_btn1"><b>특가 이벤트</b></span>
@@ -722,17 +814,20 @@ body {
 
 		</div>
 
+ 
 
-
-
+ 
 
 		<!-- content 3-4 -->
 
 		<div class="con3_border2">
 
 			<a href="#"> <img
+
 				src="resources/image/main_images/main_event4.PNG" alt="특별한 혜택"
+
 				width="268px" height="180px"><br> <br> <span
+
 				class="con3_btn2"><b>홍보/안내</b></span>
 
 				<h5>짠내투어 in 홍콩</h5> <span class="con3_font">SPRING X 홍콩덕링크루즈
@@ -745,17 +840,17 @@ body {
 
 		<br> <br> <br>
 
+ 
 
+ 
 
+ 
 
+ 
 
+ 
 
-
-
-
-
-
-
+ 
 
 		<!-- content 4 -->
 
@@ -768,6 +863,7 @@ body {
 				<li><b>고객 서비스&nbsp;</b></li>
 
 				<li><a href="#">|&nbsp;&nbsp;공지사항&nbsp; <span
+
 						class="con4_bar">|</span></a></li>
 
 				<li><a href="#">&nbsp;문의사항&nbsp; <span class="con4_bar">|</span></a></li>
@@ -776,11 +872,11 @@ body {
 
 			</ul>
 
-
+ 
 
 			<br> <br>
 
-
+ 
 
 			<!-- 사이트맵 -->
 
@@ -789,14 +885,16 @@ body {
 				<div class="row" id="ccc">
 
 					<span class="cell col11"><b>사이트 맵</b></span> <span
+
 						class="cell col12"></span> <span class="cell col13"></span> <span
+
 						class="cell col14"></span>
 
 				</div>
 
+ 
 
-
-
+ 
 
 				<div class="row">
 
@@ -806,40 +904,40 @@ body {
 
 				</div>
 
+ 
 
+ 
 
-
-
-
+ 
 
 				<div class="row">
 
 					<span class="cell col11"><a href="list">항공권 예매</a></span> <span
-						class="cell col12"><a href="resInfo">예매내역
-							확인&nbsp;&nbsp;</a></span> <span class="cell col13"><a href="#">공지사항</a></span>
-					<span class="cell col14"><a href="/login.do">로그인</a></span>
+
+						class="cell col12"><a href="resInfo">예매내역 확인&nbsp;&nbsp;</a></span> <span
+
+						class="cell col13"><a href="#">공지사항</a></span> <span
+
+						class="cell col14"><a href="/login.do">로그인</a></span>
 
 				</div>
 
+ 
 
+ 
 
+ 
 
-
-
-
-
+ 
 
 				<div class="row">
 
-					<span class="cell col11"><a href="schedule">스케줄 조회</a></span>
-
-						class="cell col12"><a href="#">회원정보 수정&nbsp;&nbsp;</a></span> 
-
+					<span class="cell col11"><a href="schedule">스케줄 조회</a></span> <span
 
 						class="cell col12"><a href="updatejoin.do">회원정보 수정&nbsp;&nbsp;</a></span> <span
 
+						class="cell col13"><a href="/qna_board.do">고객 센터</a></span> <span
 
-						class="cell col13"><a href="/qna_board.do">고객 센터</a></span> 
 						class="cell col14"><a href="/join.do">회원가입</a></span>
 
 				</div>
@@ -852,7 +950,7 @@ body {
 
 	</div>
 
-
+ 
 
 	<div class="footer">
 
@@ -865,7 +963,9 @@ body {
 				<br>
 
 				<li class="footer_li"><a href="/main.do"><img
+
 						src="resources/image/main_images/logo1.png" width="200"
+
 						height="66"></a></li>
 
 				<li class="footer_li">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
@@ -879,21 +979,27 @@ body {
 					AM 05:00) 담당자 밤새봄 팀장<br> COPYRIGHT ⓒ 2018 SPRING AIR ALL
 
 					RIGHTS RESERVED.<br>
+
 				<li>
+
 				<li class="footer_li">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
 
 				<li class="footer_li"><a
+
 					href="https://www.0404.go.kr/dev/main.mofa/" target="_blank"><img
+
 						src="resources/image/main_images/foreignLogo.png"></a></li>
 
 				<li class="footer_li">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
 
 				<li class="footer_li"><img
+
 					src="resources/image/main_images/isms_mark.png"></li>
 
 				<li class="footer_li">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
 
 				<li class="footer_li"><img
+
 					src="resources/image/main_images/waMark.png"></li>
 
 			</ul>
@@ -902,242 +1008,268 @@ body {
 
 	</div>
 
+ 
 
+ 
 
+ 
 
+ 
 
+ 
 
+ 
 
+ 
 
+ 
 
+ 
 
+ 
 
+ 
 
-
-
-
-
-
-
-
-
-
-
-
-
+ 
 
 </body>
 
 </html>
 
-
+ 
 
 <script>
-	/* 이중셀렉트박스 */
 
-	function change(departures) {
+ 
 
-		var f = document.form;
+/* 이중셀렉트박스 */
 
-		if (departures == "") {
+function change(departures) {
 
-			num = new Array("서울(김포)");
+	var f = document.form;
 
-			vnum = new Array("");
+	if (departures == "") {
 
-		} else if (departures == "1") {
+		num = new Array("서울(김포)");
 
-			num = new Array("서울(김포)", "제주");
+		vnum = new Array("");
 
-			vnum = new Array("1", "2");
+	} else if (departures == "1") {
 
-		} else if (departures == "2") {
+		num = new Array("서울(김포)", "제주");
 
-			num = new Array("부산", "제주");
+		vnum = new Array("1", "2");
 
-			vnum = new Array("1", "2");
+	} else if (departures == "2") {
 
-		} else if (departures == "3") {
+		num = new Array("부산", "제주");
 
-			num = new Array("부산", "서울(김포)");
+		vnum = new Array("1", "2");
 
-			vnum = new Array("1", "2");
+	} else if (departures == "3") {
 
-		}
+		num = new Array("부산", "서울(김포)");
 
-		for (i = 0; i < f.destination.length; i++) {
-
-			f.destination.options[0] = null;
-
-		}
-
-		for (i = 0; i < num.length; i++) {
-
-			f.destination.options[i] = new Option(num[i], vnum[i]);
-
-		}
+		vnum = new Array("1", "2");
 
 	}
 
-	/* 달력 */
+	for (i = 0; i < f.destination.length; i++) {
 
-	$(function() {
+		f.destination.options[0] = null;
 
-		from = $("#from1").datepicker({
+	}
 
-			/* defaultDate : "+1w",  */
+	for (i = 0; i < num.length; i++) {
 
-			minDate : 0,
+		f.destination.options[i] = new Option(num[i], vnum[i]);
 
-			numberOfMonths : 2,
+	}
 
-			altField : "#alternate",
+}
 
-			altFormat : "yy-mm-dd DD"
+/* 달력 */
 
-		}).on("change", function() {
+$(function() {
 
-			to.datepicker("option", "minDate", getDate(this));
+	from = $("#from1").datepicker({
 
-			var date = new Date($("#from1").datepicker({
+		/* defaultDate : "+1w",  */
 
-			}).val()), week = new Array('일', '월', '화', '수', '목', '금', '토');
+		minDate : 0,
 
-			if (week[date.getDay()] != undefined) {
+		numberOfMonths : 2,
+
+		altField : "#alternate",
+
+		altFormat : "yy-mm-dd DD"
+
+	}).on("change", function() {
+
+		to.datepicker("option", "minDate", getDate(this));
+
+ 
+
+		var date = new Date($("#from1").datepicker({
+
+ 
+
+		}).val()), week = new Array('일', '월', '화', '수', '목', '금', '토');
+
+		if (week[date.getDay()] != undefined) {
+
+		}
+
+	}), to = $("#to1").datepicker({
+
+		/* defaultDate : "+1w", */
+
+		minDate : 0,
+
+		numberOfMonths : 2,
+
+		altField : "#alternate2",
+
+		altFormat : "yy-mm-dd DD"
+
+	}).on("change", function() {
+
+		from.datepicker("option", "maxDate", getDate(this));
+
+ 
+
+		var date = new Date($("#to1").datepicker({
+
+ 
+
+		}).val()), week = new Array('일', '월', '화', '수', '목', '금', '토');
+
+		if (week[date.getDay()] != undefined) {
+
+ 
+
+		}
+
+	});
+
+	function getDate(element) {
+
+		var date;
+
+		try {
+
+			date = $.datepicker.parseDate(dateFormat, element.value);
+
+		} catch (error) {
+
+			date = null;
+
+		}
+
+		return date;
+
+	}
+
+});
+
+ 
+
+/* 오늘날짜 */
+
+$(document).ready(
+
+		function() {
+
+			$("#from1").datepicker({});
+
+			var myDate = new Date();
+
+			var month = myDate.getMonth() + 1;
+
+			if (month < 10) {
+
+				month = "0" + month;
 
 			}
 
-		}), to = $("#to1").datepicker({
+ 
 
-			/* defaultDate : "+1w", */
+			var prettyDate = myDate.getFullYear() + '-' + month + '-'
 
-			minDate : 0,
+					+ myDate.getDate();
 
-			numberOfMonths : 2,
+			$("#from1").val(prettyDate);
 
-			altField : "#alternate2",
-
-			altFormat : "yy-mm-dd DD"
-
-		}).on("change", function() {
-
-			from.datepicker("option", "maxDate", getDate(this));
-
-			var date = new Date($("#to1").datepicker({
-
-			}).val()), week = new Array('일', '월', '화', '수', '목', '금', '토');
-
-			if (week[date.getDay()] != undefined) {
-
-			}
+ 
 
 		});
 
-		function getDate(element) {
+$(document).ready(
 
-			var date;
+		function() {
 
-			try {
+			$("#to1").datepicker({});
 
-				date = $.datepicker.parseDate(dateFormat, element.value);
+			var myDate = new Date();
 
-			} catch (error) {
+			var month = myDate.getMonth() + 1;
 
-				date = null;
+			if (month < 10) {
+
+				month = "0" + month;
 
 			}
 
-			return date;
+			var prettyDate = myDate.getFullYear() + '-' + month + '-'
 
-		}
+					+ myDate.getDate();
 
-	});
+			$("#to1").val(prettyDate);
 
-	/* 오늘날짜 */
+			
 
-	$(document).ready(
+		});
 
-	function() {
+/* 달력 한글화 */
 
-		$("#from1").datepicker({});
+jQuery(function($) {
 
-		var myDate = new Date();
+	$.datepicker.regional['ko'] = {
 
-		var month = myDate.getMonth() + 1;
+ 
 
-		if (month < 10) {
+		monthNames : [ '1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월',
 
-			month = "0" + month;
+				'9월', '10월', '11월', '12월' ],
 
-		}
+		monthNamesShort : [ '1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월',
 
-		var prettyDate = myDate.getFullYear() + '-' + month + '-'
+				'9월', '10월', '11월', '12월' ],
 
-		+ myDate.getDate();
+		dayNames : [ '일', '월', '화', '수', '목', '금', '토' ],
 
-		$("#from1").val(prettyDate);
+		dayNamesShort : [ '일', '월', '화', '수', '목', '금', '토' ],
 
-	});
+		dayNamesMin : [ '일', '월', '화', '수', '목', '금', '토' ],
 
-	$(document).ready(
+		weekHeader : 'Wk',
 
-	function() {
+		dateFormat : 'yy-mm-dd',
 
-		$("#to1").datepicker({});
+		firstDay : 0,
 
-		var myDate = new Date();
+		isRTL : false,
 
-		var month = myDate.getMonth() + 1;
+		showMonthAfterYear : true,
 
-		if (month < 10) {
+		yearSuffix : '년'
 
-			month = "0" + month;
+	};
 
-		}
+	$.datepicker.setDefaults($.datepicker.regional['ko']);
 
-		var prettyDate = myDate.getFullYear() + '-' + month + '-'
+});
 
-		+ myDate.getDate();
+ 
 
-		$("#to1").val(prettyDate);
-
-	});
-
-	/* 달력 한글화 */
-
-	jQuery(function($) {
-
-		$.datepicker.regional['ko'] = {
-
-			monthNames : [ '1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월',
-
-			'9월', '10월', '11월', '12월' ],
-
-			monthNamesShort : [ '1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월',
-
-			'9월', '10월', '11월', '12월' ],
-
-			dayNames : [ '일', '월', '화', '수', '목', '금', '토' ],
-
-			dayNamesShort : [ '일', '월', '화', '수', '목', '금', '토' ],
-
-			dayNamesMin : [ '일', '월', '화', '수', '목', '금', '토' ],
-
-			weekHeader : 'Wk',
-
-			dateFormat : 'yy-mm-dd',
-
-			firstDay : 0,
-
-			isRTL : false,
-
-			showMonthAfterYear : true,
-
-			yearSuffix : '년'
-
-		};
-
-		$.datepicker.setDefaults($.datepicker.regional['ko']);
-
-	});
 </script>
