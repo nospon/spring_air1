@@ -14,7 +14,7 @@
 		<property name="url" value="jdbc:mysql://localhost:3306/springair?useSSL=false"></property>
 		<property name="username" value="root"></property>
 		<!-- <property name="password" value="0000"></property> -->
-		<property name="password" value="000000"></property>	
+		<property name="password" value="1234"></property>	
 	</bean> 
 	
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">

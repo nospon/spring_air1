@@ -559,7 +559,8 @@ input[type=number]{
 										alert("검색 결과가 없습니다"); // 실패 시 처리
 									},
 									success : function(data) {
-										//var data = data.list;
+										click = false;
+
 										var str = '';
 										click = true;
 										$(data.list)
