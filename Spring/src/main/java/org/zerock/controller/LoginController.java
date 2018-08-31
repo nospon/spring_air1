@@ -54,7 +54,7 @@ public class LoginController {
 	
 /*	@RequestMapping(value = "/home.do", method = RequestMethod.GET)
 	public String homego(Locale locale, Model model) {
-		logger.info("È¨À¸·Î", locale);
+		logger.info("í™ˆìœ¼ë¡œ", locale);
 		
 		
 		return "home";
@@ -62,7 +62,7 @@ public class LoginController {
 	
 /*	@RequestMapping(value = "/main.do", method = RequestMethod.GET)
 	public String main(Model model) {
-		logger.info("¸ŞÀÎ ÄÁÆ®·Ñ·¯");
+		logger.info("ë©”ì¸ ì»¨íŠ¸ë¡¤ëŸ¬");
 		
 		
 		return "main/main";
@@ -71,7 +71,7 @@ public class LoginController {
 	
 	@RequestMapping(value = "/login.do", method = RequestMethod.GET)
 	public String logingo(HttpSession sesstion, MemberVO memberVO, Model model) throws Exception {
-		logger.info("·Î±×ÀÎ");
+		logger.info("ë¡œê·¸ì¸");
 		
 		
 		return "logic/login";
@@ -81,12 +81,12 @@ public class LoginController {
 	
 	@RequestMapping(value = "/logout.do", method = RequestMethod.GET)
 	public void logout(HttpServletResponse response,HttpSession sesstion, MemberVO memberVO, Model model) throws Exception {
-		logger.info("·Î±×¾Æ¿ô");
+		logger.info("ë¡œê·¸ì•„ì›ƒ");
 		response.setContentType("text/html; charset=UTF-8");
 		PrintWriter out = response.getWriter();
 		
 			sesstion.invalidate();
-			out.println("<script>alert('·Î±×¾Æ¿ôµÇ¾ú½À´Ï´Ù.'); location.href='login.do';</script>");
+			out.println("<script>alert('ë¡œê·¸ì•„ì›ƒë˜ì—ˆìŠµë‹ˆë‹¤.'); location.href='login.do';</script>");
 		
 		
 	
@@ -95,7 +95,7 @@ public class LoginController {
 	
 	@RequestMapping(value = "/loginSusessce.do", method = RequestMethod.POST)
 	public void loginSusess(HttpServletResponse response,LogicVO lvo,String id, String pass,HttpSession sesstion,MemberVO memberVO,Model model) throws Exception {
-		logger.info("·Î±×ÀÎ¼º°ø");
+		logger.info("ë¡œê·¸ì¸ì„±ê³µ");
 		response.setContentType("text/html; charset=UTF-8");
 		PrintWriter out = response.getWriter();
 		System.out.println(id);
@@ -103,18 +103,18 @@ public class LoginController {
 		
 		MemberVO vo = memberInfo.logreadPw(lvo);
 		System.out.println(vo+"sdfsds");
-		System.out.println("¿äÃ»"+memberInfo.logreadPw(lvo));
+		System.out.println("ìš”ì²­"+memberInfo.logreadPw(lvo));
 		
 			if(vo != null) {
 				sesstion.setAttribute("login", vo);
 				System.out.println(sesstion.toString()+"asasa");
-				out.println("<script>alert('È¯¿µÇÕ´Ï´Ù.'); location.href='main.do';</script>");
+				out.println("<script>alert('í™˜ì˜í•©ë‹ˆë‹¤.'); location.href='main.do';</script>");
 				
 				
 
 			}else {
 				
-			out.println("<script>alert('·Î±×ÀÎÁ¤º¸¸¦ È®ÀÎºÎÅ¹'); history.go(-1);</script>");
+			out.println("<script>alert('ë¡œê·¸ì¸ì •ë³´ë¥¼ í™•ì¸ë¶€íƒ'); history.go(-1);</script>");
 			}
 			
 			
@@ -127,7 +127,7 @@ public class LoginController {
 	
 	@RequestMapping(value = "/logSession.do", method = RequestMethod.GET)
 	public String loginSession(HttpSession sesstion, MemberVO memberVO, Model model) throws Exception {
-		logger.info("·Î±×¼¼¼Ç ÆäÀÌÁö");
+		logger.info("ë¡œê·¸ì„¸ì…˜ í˜ì´ì§€");
 		
 		MemberVO SeVO = (MemberVO) sesstion.getAttribute("login");
 		System.out.println(sesstion.getAttribute("login"));
@@ -141,7 +141,7 @@ public class LoginController {
 	
 	@RequestMapping(value = "/join.do", method = RequestMethod.GET)
 	public String joingo(HttpSession sesstion, MemberVO joinyee, Model model) throws Exception {
-		logger.info("È¸¿ø°¡ÀÔ ÆäÀÌÁö");
+		logger.info("íšŒì›ê°€ì… í˜ì´ì§€");
 
 		
 		
@@ -151,7 +151,7 @@ public class LoginController {
 	
 	@RequestMapping(value = "/joinSuccess.do", method = RequestMethod.POST)
 	public String joingogo(HttpServletRequest request,HttpSession sesstion,  Model model) throws Exception {
-		logger.info("È¸¿ø°¡ÀÔ ¼º°øÆäÀÌÁö");
+		logger.info("íšŒì›ê°€ì… ì„±ê³µí˜ì´ì§€");
 		MemberVO joinyee = new MemberVO();
 		
 		joinyee.setId(request.getParameter("id"));
@@ -174,7 +174,7 @@ public class LoginController {
 	
 	@RequestMapping(value = "/logremove.do", method = RequestMethod.GET)
 	public String logdrow(HttpServletRequest request,HttpSession sesstion,String id, Model model) throws Exception {
-		logger.info("È¸¿øÁ¤º¸ »èÁ¦");
+		logger.info("íšŒì›ì •ë³´ ì‚­ì œ");
 		MemberVO SeVO = (MemberVO) sesstion.getAttribute("login");
 		System.out.println("2"+SeVO);
 //		System.out.println("2"+sesstion.getAttribute("login"));
@@ -190,20 +190,20 @@ public class LoginController {
 	
 	@RequestMapping(value = "/logremove2.do", method = RequestMethod.GET)
 	public String logdrow2(@RequestParam String pass,HttpSession sesstion, Model model) throws Exception {
-		logger.info("È¸¿øÁ¤º¸ »èÁ¦2");
+		logger.info("íšŒì›ì •ë³´ ì‚­ì œ2");
 		MemberVO SeVO = (MemberVO) sesstion.getAttribute("login");
 		System.out.println("2"+SeVO);
 		
 		String id = ((MemberVO) (sesstion.getAttribute("login"))).getId();
-		System.out.println("¼¼¼Ç¾ÆµÚ:"+id);
-		System.out.println("ÀÔ·Â ºñ¹ø:"+pass);
+		System.out.println("ì„¸ì…˜ì•„ë’¤:"+id);
+		System.out.println("ì…ë ¥ ë¹„ë²ˆ:"+pass);
 		boolean result = memberInfo.checkPw(id, pass);
 		System.out.println(result);
 		
 		if(result) {
 			sesstion.invalidate();
 			memberInfo.logremove(id);
-			System.out.println("¾Æµğ°ª:"+id);
+			System.out.println("ì•„ë””ê°’:"+id);
 		}else {
 			return "logic/logremove";
 		}
@@ -214,7 +214,7 @@ public class LoginController {
 	
 	@RequestMapping(value = "/updatejoin.do", method = RequestMethod.GET)
 	public String updatelog(HttpSession sesstion, Model model) throws Exception {
-		logger.info("¼öÁ¤ÆäÀÌÁö");
+		logger.info("ìˆ˜ì •í˜ì´ì§€");
 		MemberVO SeVO = (MemberVO) sesstion.getAttribute("login");
 		System.out.println(SeVO);
 		
@@ -225,7 +225,7 @@ public class LoginController {
 	
 	@RequestMapping(value = "/updatememberlog.do", method = RequestMethod.POST)
 	public void updatelog2(@RequestParam String pass,HttpServletResponse response,HttpServletRequest request,HttpSession sesstion, Model model) throws Exception {
-		logger.info("¼öÁ¤ ¿Ï·á");
+		logger.info("ìˆ˜ì • ì™„ë£Œ");
 		response.setContentType("text/html; charset=UTF-8");
 		PrintWriter out = response.getWriter();
 		
@@ -252,11 +252,11 @@ public class LoginController {
 			
 			
 			memberInfo.modify(updateyee);
-			System.out.println("ÄÁÆ®·Ñ·¯:"+updateyee);
-			out.println("<script>alert('¼öÁ¤¿Ï·á'); location.href='../home.do';</script>");
+			System.out.println("ì»¨íŠ¸ë¡¤ëŸ¬:"+updateyee);
+			out.println("<script>alert('ìˆ˜ì •ì™„ë£Œ'); location.href='../home.do';</script>");
 			
 		}else {
-			out.println("<script>alert('ºñ¹øÀ» ´Ù½Ã ÀÔ·ÂÇØÁÖ¼¼¿ä'); history.go(-1); </script>");
+			out.println("<script>alert('ë¹„ë²ˆì„ ë‹¤ì‹œ ì…ë ¥í•´ì£¼ì„¸ìš”'); history.go(-1); </script>");
 		}
 		
 		
@@ -267,7 +267,7 @@ public class LoginController {
 	
 /*	@RequestMapping(value = "seatlist.do", method = RequestMethod.GET)
 	public String seatlist(HttpSession sesstion,Locale locale, Model model) {
-		logger.info("¿¹¾àÆäÀÌÁö", locale);
+		logger.info("ì˜ˆì•½í˜ì´ì§€", locale);
 		
 		MemberVO SeVO = (MemberVO) sesstion.getAttribute("login");
 		System.out.println(SeVO);

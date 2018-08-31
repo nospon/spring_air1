@@ -23,7 +23,7 @@ import org.zerock.domain.SeatVO;
 import org.zerock.service.SeatOptionService;
 
 @Controller
-@RequestMapping("/seat/*")
+/*@RequestMapping("/seat/*")*/
 public class SeatOptionController {
 	
 	private static final Logger logger=LoggerFactory.getLogger(SeatOptionController.class);
@@ -44,7 +44,7 @@ public class SeatOptionController {
 	
 	@RequestMapping(value="/listSeat4",method=RequestMethod.GET)
 	public void listAll2(Model model, HttpSession sesstion) throws Exception{
-		logger.info("¿À´ÂÆí ÁÂ¼®");
+		logger.info("ì˜¤ëŠ”í¸ ì¢Œì„");
 		
 		MemberVO SeVO = (MemberVO) sesstion.getAttribute("login");
 		System.out.println(SeVO);
@@ -64,10 +64,10 @@ public class SeatOptionController {
 		System.out.println(SeVO);
 	}
 	
-	//¿ø·¡ °áÁ¦controller
+	//ì›ë˜ ê²°ì œcontroller
 	@RequestMapping(value="/payment",method=RequestMethod.GET)
 	public void paymentGET(PaymentVO payment,Model model, HttpSession sesstion) throws Exception{	
-		logger.info("°áÁ¦");
+		logger.info("ê²°ì œ");
 		
 		MemberVO SeVO = (MemberVO) sesstion.getAttribute("login");
 		System.out.println(SeVO);
@@ -75,24 +75,26 @@ public class SeatOptionController {
 	
 /*	@RequestMapping(value="/payment/{paynum}",method=RequestMethod.POST)
 	public void paymentPOST(@RequestParam("pay_num") int pay_num, Model model) throws Exception{	
-		logger.info("°áÁ¦ pay_num ³Ñ±â±â");
+		logger.info("ê²°ì œ pay_num ë„˜ê¸°ê¸°");
 		model.addAttribute("paymentVO",service.paynumread(pay_num)); 
 	}*/
 
-	//¿ø·¡ ÁÂ¼® ¿¹¾à ¸¶Áö¸· page
+	//ì›ë˜ ì¢Œì„ ì˜ˆì•½ ë§ˆì§€ë§‰ page
 		@RequestMapping(value="/lastSeat",method=RequestMethod.GET)
 		public void lastSeatGET(PaymentVO payment,Model model, HttpSession sesstion) throws Exception{	
-			logger.info("ÁÂ¼®¿¹¾à¸¶Áö¸·page");
+			logger.info("ì¢Œì„ì˜ˆì•½ë§ˆì§€ë§‰page");
 			
 			MemberVO SeVO = (MemberVO) sesstion.getAttribute("login");
 			System.out.println(SeVO);
 		}
 		
 		@RequestMapping(value="/resInfo",method=RequestMethod.GET)
-		public void resInfoGET(Model model, HttpSession sesstion) throws Exception{	
-			logger.info("¿¹¾àÈ®ÀÎpage");
+		public String resInfoGET(Model model, HttpSession sesstion) throws Exception{	
+			logger.info("ì˜ˆì•½í™•ì¸page");
 			
 			MemberVO SeVO = (MemberVO) sesstion.getAttribute("login");
 			System.out.println(SeVO);
+			
+			return "seat/resInfo";
 		}
 }

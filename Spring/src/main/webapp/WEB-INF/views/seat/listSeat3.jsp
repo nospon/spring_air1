@@ -127,7 +127,7 @@ var sc_num="";
 						//location.href="";
 					}
 					else if(c==false){
-						location.href="/seat/listSeat3";
+						location.href="/main.do";
 						//나중에 메인페이지로 변경
 					}
 				}

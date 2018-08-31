@@ -130,7 +130,7 @@ $(document).ready(function(){
 									console.log("result : "+result);
 									if(result=='SUCCESS'){
 											alert("Seat_YN update");
-											location.href="/seat/resInfo";
+											location.href="/main.do";
 										}
 									}
 								});
@@ -165,7 +165,7 @@ $(document).ready(function(){
 		
 	//Main으로 가는 버튼
 	$("#goMain").on("click", function(){
-		location.href="/seat/listSeat3"; //main으로 바꾸기
+		location.href="/main.do"; //main으로 바꾸기
 	});
 });
 </script>

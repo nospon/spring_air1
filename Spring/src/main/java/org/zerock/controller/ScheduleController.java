@@ -29,7 +29,7 @@ import org.zerock.persistence.ScheduleDAO;
 import org.zerock.service.ScheduleService;
 
 @Controller
-@RequestMapping("/schedule/*") 
+/*@RequestMapping("/schedule/*") */
 class ScheduleController {
 	private static final Logger logger = LoggerFactory.getLogger(ScheduleController.class);
 
@@ -38,7 +38,7 @@ class ScheduleController {
 
 	@RequestMapping(value = "/listAll", method = RequestMethod.GET)
 	public String listAll(HttpSession sesstion,Model model) throws Exception {
-		logger.info("¿¸√º∏ÆΩ∫∆Æ ∫∏±‚");
+		logger.info("Ï†ÑÏ≤¥Î¶¨Ïä§Ìä∏ Î≥¥Í∏∞");
 		MemberVO SeVO = (MemberVO) sesstion.getAttribute("login");
 		System.out.println(SeVO);
 
@@ -48,23 +48,23 @@ class ScheduleController {
 
 @RequestMapping(value = "/list", method = RequestMethod.GET)
 	public String list(HttpSession sesstion,Model model) throws Exception {
-		logger.info("∏ÆΩ∫∆Æ ∫∏±‚");
+		logger.info("Î¶¨Ïä§Ìä∏ Î≥¥Í∏∞");
 		MemberVO SeVO = (MemberVO) sesstion.getAttribute("login");
 		System.out.println(SeVO);
 
 		model.addAttribute("list", service.list());
-		return "/schedule/list";
+		return "schedule/list";
 	}
 
 @RequestMapping(value = "/schedule", method = RequestMethod.GET)
 public String schedule(HttpSession sesstion,Model model) throws Exception {
-	logger.info("øÓ«◊¿œ¡§∫∏±‚");
+	logger.info("Ïö¥Ìï≠ÏùºÏ†ïÎ≥¥Í∏∞");
 	MemberVO SeVO = (MemberVO) sesstion.getAttribute("login");
 	System.out.println(SeVO);
 
 
 	model.addAttribute("list", service.list());
-	return "/schedule/schedule";
+	return "schedule/schedule";
 }
 	/*@RequestMapping(value = "/save", method = RequestMethod.POST)
 	public String save(Model model) throws Exception {
@@ -73,7 +73,7 @@ public String schedule(HttpSession sesstion,Model model) throws Exception {
 	}*/
 	 @RequestMapping(value="/save",method=RequestMethod.GET)
 	    public void createGET(HttpSession sesstion,Schedule_InfoVO vo, Model model) throws Exception{
-	        System.out.println(" GETπÊΩƒ");
+	        System.out.println(" GETÎ∞©Ïãù");
 	        
 	    }
 	 @RequestMapping(value="/save",method=RequestMethod.POST)
@@ -81,7 +81,7 @@ public String schedule(HttpSession sesstion,Model model) throws Exception {
 		 MemberVO SeVO = (MemberVO) sesstion.getAttribute("login");
 			System.out.println(SeVO);
 	
-		 System.out.println(" POSTπÊΩƒ");
+		 System.out.println(" POSTÎ∞©Ïãù");
 			System.out.println(vo.toString());
 			System.out.println(vo.getSc_num1());
 			System.out.println(vo.getAir_name1());
