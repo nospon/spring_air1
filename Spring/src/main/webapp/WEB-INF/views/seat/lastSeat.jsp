@@ -144,7 +144,6 @@ input[type=button]:hover {
 $(document).ready(function(){
 	//예약번호,이름,날짜 출력
 	 $.getJSON('/seats/res/', function(data){
-		//alert(data);
 		console.log(data.length);
 		var str="";
 		
@@ -162,11 +161,11 @@ $(document).ready(function(){
 		    	 				   "<input type='button' id='goMain' value='메인으로'/>" + "</td>" + "</tr>"
 		    		
 		    	 				  $("#resinfo").on("click", ".tr1 #goResInfo", function(){
-		    	 						location.href="/seat/resInfo";
+		    	 						location.href="/resInfo";
 		    	 					});
 		    	 					
 		    	 					$("#resinfo").on("click", ".tr1 #goMain",function(){
-		    	 						location.href="";
+		    	 						location.href="/main.do";
 		    	 					});
 		});
 		$("#resinfo").html(str);

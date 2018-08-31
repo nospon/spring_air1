@@ -9,28 +9,28 @@ import org.zerock.domain.MemberVO;
 
 
 public interface MemberDAO {
-		//íšŒì› ê°€ì…
+		//È¸¿ø °¡ÀÔ
 		public void create(MemberVO joinyee)throws Exception;
 		
-		//íšŒì› ì •ë³´ ì½ê¸°
+		//È¸¿ø Á¤º¸ ÀĞ±â
 		public MemberVO read(Integer mem_num)throws Exception;
 		
-		//ìˆ˜ì •
+		//¼öÁ¤
 		public void update(MemberVO updateyee)throws Exception;
 		
-		//ì‚­ì œ
+		//»èÁ¦
 		public void delete(Integer mem_num)throws Exception;
 		
-		//ë¦¬ìŠ¤íŠ¸ë³´ê¸°
+		//¸®½ºÆ®º¸±â
 		public List<MemberVO> listAll()throws Exception;
 		
-		//ë¡œê·¸ì¸ ì •ë³´ì‚­ì œ
+		//·Î±×ÀÎ Á¤º¸»èÁ¦
 		public MemberVO logremove(String id)throws Exception;
 		
-		//ë¡œê·¸ì¸ ì •ë³´ ê°€ì ¸ì˜¤ê¸°
+		//·Î±×ÀÎ Á¤º¸ °¡Á®¿À±â
 		public MemberVO logreadPw(LogicVO lvo)throws Exception;
 		
-		//ìˆ˜ì •ë° ì‚­ì œ ë¥¼ ìœ„í•œ ì²´í¬
+		//¼öÁ¤¹× »èÁ¦ ¸¦ À§ÇÑ Ã¼Å©
 		public boolean cheakPw(String id, String pass) throws Exception;
 		
 		

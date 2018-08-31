@@ -39,16 +39,6 @@ select *from Schedule
 	</insert>
 
 
-<insert id="insert2">
-		insert into schedule_info
-
-		(Sc_num,
-		Air_name,
-		) values
-		(#{Sc_num},
-		#{Air_name})
-	</insert>
-
 
 
 

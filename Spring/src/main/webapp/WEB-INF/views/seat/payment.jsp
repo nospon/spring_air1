@@ -142,8 +142,13 @@ input[type=text],input[type=password]{
 	 
 	<table id = 'paytable' border=1>
 		<tr>
+<<<<<<< HEAD
 			<th class="td_style1">이름</th>
 			<td class="td1"><input type="text" id="name" placeholder="이름"/></td>
+=======
+			<th>이름</th>
+			<td class="td1"><input type="text" id="name" /></td>
+>>>>>>> refs/remotes/origin/master
 		</tr>
 		<tr>
 			<th class="td_style1">결제수단</th>
@@ -190,6 +195,7 @@ input[type=text],input[type=password]{
                <td class="td7">
                	<input type="text" id='tic_price' value='' readonly/>원
                </td>
+<<<<<<< HEAD
 	       </tr>        
        </table>
        <br><br>
@@ -206,6 +212,17 @@ input[type=text],input[type=password]{
 <br><br><br><br><br><br><br><br>
 <%@include file="../main/footer.jsp" %>	
 
+=======
+	       </tr> 
+	       <tr>
+	           <td class="td8" colspan=2 align="center">
+	               	<button id='gopay' class='btn btn-gopay'>결제하기</button> <!--<type="submit"-->
+	               	<button id='goback' class='btn btn-goback'>취소하기</button>          
+	           </td>
+           </tr>
+       </table>     
+	</div>
+>>>>>>> refs/remotes/origin/master
 </body>
 <script>
 //결제폼등록 
@@ -236,7 +253,7 @@ $("#gopay").on("click",function(){
 			console.log("result : " + result);
 			if(result=='SUCCESS'){
 				alert('결제가 완료되었습니다.');
-				location.href="/seat/lastSeat"; //페이지 경로 변경			
+				location.href="/lastSeat";		
 			}
 		}
 	});
@@ -248,10 +265,10 @@ $(document).ready(function(){
 	$("#goback").on("click",function(){
 		var c = confirm("결제를 취소하시겠습니까?");
 		if(c==true){			
-			location.href="/seat/listSeat3";		
+			location.href="/main.do";		
 		}
 		else if(c==false){
-			location.href="/seat/payment";
+			location.href="/payment";
 		}	
 	});
 });
@@ -259,9 +276,7 @@ $(document).ready(function(){
 //ticket값
 
 $(document).ready(function(){    
-	//var air_name="JE01";
 	$.getJSON('/seats/tic/', function(data){
-		//alert(data);
 		console.log(data.length);
 		var str="";
 		

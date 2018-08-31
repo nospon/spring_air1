@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.zerock.domain.Criteria;
+import org.zerock.domain.MemberVO;
 import org.zerock.domain.PageMaker;
 import org.zerock.domain.PaymentVO;
 import org.zerock.domain.ResInfoVO;
@@ -36,7 +38,12 @@ public class SeatController {
 	//List
 	@RequestMapping(value="/all/{air_name}", method=RequestMethod.GET)
 	public ResponseEntity<List<SeatInfoVO>> list(
-			@PathVariable("air_name") String air_name){
+			@PathVariable("air_name") String air_name,HttpSession sesstion){
+		
+		MemberVO SeVO = (MemberVO) sesstion.getAttribute("login");
+		System.out.println(SeVO);
+
+		
 				ResponseEntity<List<SeatInfoVO>> entity=null;
 			try {
 				entity = new ResponseEntity<>(
@@ -51,8 +58,12 @@ public class SeatController {
 	
 	@RequestMapping(value="/all/{air_name}/{sc_num}", method=RequestMethod.GET)
 	public ResponseEntity<Map<String, Object>> listSC(
-			@PathVariable("air_name") String air_name, @PathVariable("sc_num") int sc_num ){
-				ResponseEntity<Map<String, Object>> entity=null;
+			@PathVariable("air_name") String air_name, @PathVariable("sc_num") int sc_num ,HttpSession sesstion){
+			
+			MemberVO SeVO = (MemberVO) sesstion.getAttribute("login");
+			System.out.println(SeVO);
+			
+			ResponseEntity<Map<String, Object>> entity=null;
 			try {
 				Map<String, Object> map=new HashMap<String, Object>();
 				List<SeatInfoVO> list=service.listSC(air_name,sc_num);
@@ -67,9 +78,13 @@ public class SeatController {
 			return entity;
 			}
 	
-	//Ìã∞Ïºì Í∞í ÎÑòÍ∏∞Îäî controller
+	//∆ºƒœ ∞™ ≥—±‚¥¬ controller
 	@RequestMapping(value="/tic", method=RequestMethod.GET)
-	public ResponseEntity<List<ResInfoVO>> ticPrice(){
+	public ResponseEntity<List<ResInfoVO>> ticPrice(HttpSession sesstion){
+		
+		MemberVO SeVO = (MemberVO) sesstion.getAttribute("login");
+		System.out.println(SeVO);
+		
 				ResponseEntity<List<ResInfoVO>> entity=null;
 			try {
 				entity = new ResponseEntity<>(
@@ -82,14 +97,17 @@ public class SeatController {
 			return entity;
 		}
 	
-	//ÏàòÏ†ï
+	//ºˆ¡§
 	//seat_num & sc_num... /{seat_num}/{sc_num}
 	@RequestMapping(value="/{air_name}/{sc_num}/{seat_num}",method= {RequestMethod.PUT, RequestMethod.PATCH})
 	public ResponseEntity<String> update(
 			@PathVariable("air_name") String air_name, 
 			@PathVariable("sc_num") int sc_num,
 			@PathVariable("seat_num") String seat_num,
-			@RequestBody SeatInfoVO vo) {
+			@RequestBody SeatInfoVO vo, HttpSession sesstion) {
+		
+		MemberVO SeVO = (MemberVO) sesstion.getAttribute("login");
+		System.out.println(SeVO);
 		
 		ResponseEntity<String> entity=null;
 		
@@ -111,10 +129,14 @@ public class SeatController {
 		return entity;
 	}
 	
-	//Í≤∞Ï†úinsert
+	//∞·¡¶insert
 		@RequestMapping(value="",method=RequestMethod.POST)
 		public ResponseEntity<String> register(
-				@RequestBody PaymentVO payment) {
+				@RequestBody PaymentVO payment, HttpSession sesstion) {
+			
+			MemberVO SeVO = (MemberVO) sesstion.getAttribute("login");
+			System.out.println(SeVO);
+			
 			ResponseEntity<String> entity=null;
 			try {
 				service.payregist(payment);
@@ -128,12 +150,17 @@ public class SeatController {
 			return entity;
 		}
 		
-		//ÌéòÏù¥ÏßïÏ≤òÎ¶¨
+		//∆‰¿Ã¬°√≥∏Æ
 		@RequestMapping(value="/{air_name}/{sc_num}/{page}", method=RequestMethod.GET)
 		public ResponseEntity<Map<String, Object>> listPage(
 				@PathVariable("air_name") String air_name,
 				@PathVariable("sc_num") int sc_num,
-				@PathVariable("page") int page){
+				@PathVariable("page") int page, HttpSession sesstion){
+			
+			
+			MemberVO SeVO = (MemberVO) sesstion.getAttribute("login");
+			System.out.println(SeVO);
+			
 			ResponseEntity<Map<String,Object>> entity=null;
 			
 			try {
@@ -161,7 +188,7 @@ public class SeatController {
 			return entity;
 		}
 		
-		//Í≤∞Ï†úÏôÑÎ£å
+		//∞·¡¶øœ∑·
 	/*	@RequestMapping(value="/res/{pay_num}", method=RequestMethod.GET)
 		public ResponseEntity<List<PaymentVO>> resList(
 				@PathVariable("pay_num") int pay_num){
@@ -178,8 +205,14 @@ public class SeatController {
 				}*/
 		
 		@RequestMapping(value="/res", method=RequestMethod.GET)
-		public ResponseEntity<List<PaymentVO>> resList(){
-					ResponseEntity<List<PaymentVO>> entity=null;
+		public ResponseEntity<List<PaymentVO>> resList(HttpSession sesstion){
+					
+			MemberVO SeVO = (MemberVO) sesstion.getAttribute("login");
+			System.out.println(SeVO);
+			
+			
+				ResponseEntity<List<PaymentVO>> entity=null;
+				
 					try {
 						entity = new ResponseEntity<>(
 								service.resList(),HttpStatus.OK);
@@ -191,10 +224,15 @@ public class SeatController {
 					return entity;
 				}
 		
-		//resInfo tableÏóê Í∞í Ï†ÄÏû•
+		//resInfo tableø° ∞™ ¿˙¿Â
 		@RequestMapping(value="/resinfo/{air_name}/{sc_num}/{seat_num}",method=RequestMethod.POST)
 		public ResponseEntity<List<String>> resinfoin(
-				@RequestBody ResInfoVO resInfo) {
+				@RequestBody ResInfoVO resInfo,HttpSession sesstion) {
+			
+			MemberVO SeVO = (MemberVO) sesstion.getAttribute("login");
+			System.out.println(SeVO);
+			
+			
 			ResponseEntity<List<String>> entity=null;
 			try {
 				service.resinfoin(resInfo);
@@ -213,7 +251,12 @@ public class SeatController {
 				@PathVariable("air_name") String air_name, 
 				@PathVariable("sc_num") int sc_num,
 				@PathVariable("seat_num") String seat_num,
-				@RequestBody SeatInfoVO vo) {
+				@RequestBody SeatInfoVO vo, HttpSession sesstion) {
+			
+			
+			MemberVO SeVO = (MemberVO) sesstion.getAttribute("login");
+			System.out.println(SeVO);
+			
 			
 			ResponseEntity<String> entity=null;
 			
@@ -236,11 +279,16 @@ public class SeatController {
 		}
 		
 	
-	 //ÏòàÎß§ ÌôïÏù∏(Ìã∞Ïºì Ï°∞Ìöå)List
+	 //øπ∏≈ »Æ¿Œ(∆ºƒœ ¡∂»∏)List
 	@RequestMapping(value="/ticketinfo/{name}/{res_rnum}", method=RequestMethod.GET)
 	public ResponseEntity<Map<String, Object>> ticketinfoLi(
 			@PathVariable("name") String name,
-			@PathVariable("res_rnum") String res_rnum){
+			@PathVariable("res_rnum") String res_rnum, HttpSession sesstion){
+		
+		MemberVO SeVO = (MemberVO) sesstion.getAttribute("login");
+		System.out.println(SeVO);
+		
+		
 		ResponseEntity<Map<String, Object>> entity=null;
 		try {
 			Map<String, Object> map=new HashMap<String, Object>();
@@ -256,11 +304,15 @@ public class SeatController {
 		return entity;
 	}	
 	
-	//ÏòàÎß§ Ï∑®ÏÜå
-	//paymentÏÇ≠Ï†ú(ok), resInfo ÏÇ≠Ï†ú(ok) 
+	//øπ∏≈ √Îº“
+	//paymentªË¡¶(ok), resInfo ªË¡¶(ok) 
 	@RequestMapping(value="/paymentRM/{pay_num}",method=RequestMethod.DELETE)
 	public ResponseEntity<String> paymentRM(
-			@PathVariable("pay_num") int pay_num) {
+			@PathVariable("pay_num") int pay_num, HttpSession sesstion) {
+		
+		
+		MemberVO SeVO = (MemberVO) sesstion.getAttribute("login");
+		System.out.println(SeVO);
 		
 		ResponseEntity<String>  entity=null;
 		try {			
@@ -276,7 +328,11 @@ public class SeatController {
 	
 	@RequestMapping(value="/resinfoRM/{resInfo_num}",method=RequestMethod.DELETE)
 	public ResponseEntity<String> resinfoRM(
-			@PathVariable("resInfo_num") int resInfo_num) {
+			@PathVariable("resInfo_num") int resInfo_num , HttpSession sesstion) {
+		
+		MemberVO SeVO = (MemberVO) sesstion.getAttribute("login");
+		System.out.println(SeVO);
+		
 		
 		ResponseEntity<String>  entity=null;
 		try {			
@@ -297,7 +353,11 @@ public class SeatController {
 			@PathVariable("seat_num1") String seat_num1, 
 			@PathVariable("air_name2") String air_name2, 
 			@PathVariable("seat_num2") String seat_num2, 
-			@RequestBody ResInfoVO vo) {
+			@RequestBody ResInfoVO vo, HttpSession sesstion) {
+		
+		MemberVO SeVO = (MemberVO) sesstion.getAttribute("login");
+		System.out.println(SeVO);
+		
 		
 		ResponseEntity<String> entity=null;
 		
@@ -320,10 +380,14 @@ public class SeatController {
 		return entity;
 	}
 	
-	//air_name, sc_num Í∞ÄÏ†∏Ïò§Í∏∞
+	//air_name, sc_num ∞°¡Æø¿±‚
 	@RequestMapping(value="/snum", method=RequestMethod.GET)
-	public ResponseEntity<List<Schedule_InfoVO>> snumList(){
-				ResponseEntity<List<Schedule_InfoVO>> entity=null;
+	public ResponseEntity<List<Schedule_InfoVO>> snumList(HttpSession sesstion){
+				
+		MemberVO SeVO = (MemberVO) sesstion.getAttribute("login");
+		System.out.println(SeVO);
+		
+		ResponseEntity<List<Schedule_InfoVO>> entity=null;
 				try {
 					entity = new ResponseEntity<>(
 							service.snumList(),HttpStatus.OK);
@@ -335,5 +399,3 @@ public class SeatController {
 				return entity;
 			}
 }
-	
-	

@@ -9,19 +9,19 @@ import org.zerock.domain.Criteria;
 
 public interface BoardInfo {
 	
-	//í˜ì´ì§€ ì‹¹ë‹¤ ë³´ê¸°
+	//ÆäÀÌÁö ½Ï´Ù º¸±â
 	public List<BoardVO> listAll() throws Exception;
 	
-	//ìƒì„¸ë³´ê¸°
+	//»ó¼¼º¸±â
 	public BoardVO read(int board_num)throws Exception;
 	
-	//í˜ì´ì§• Criteria ì‚¬ìš©
+	//ÆäÀÌÂ¡ Criteria »ç¿ë
 	public List<BoardVO> listCriteria(Criteria cri) throws Exception; 
 	
-	//í˜ì´ì§• Criteria ì‚¬ìš©2 ë°‘ì— ê³„ì‹œíŒ í˜ì´ì§• ë¦¬ìŠ¤íŠ¸ ì „ë¶€ë¥¼ ì‹¹ë‹¤ ê°€ì§€ê³ ì˜´ 1ë²ˆê»€ 131 ê°œë¡œ ê³ ì •í•´ë†”ì„œ ëª‡ê°œ ë°–ì— ì•ˆë‚˜ì™”ì—ˆìŒ
+	//ÆäÀÌÂ¡ Criteria »ç¿ë2 ¹Ø¿¡ °è½ÃÆÇ ÆäÀÌÂ¡ ¸®½ºÆ® ÀüºÎ¸¦ ½Ï´Ù °¡Áö°í¿È 1¹ø²« 131 °³·Î °íÁ¤ÇØ³ö¼­ ¸î°³ ¹Û¿¡ ¾È³ª¿Ô¾úÀ½
 	public int listCountCriteria(Criteria cri) throws Exception;
 	
-	//ì¡°íšŒìˆ˜ ì²˜ë¦¬
+	//Á¶È¸¼ö Ã³¸®
 	
 	
 }

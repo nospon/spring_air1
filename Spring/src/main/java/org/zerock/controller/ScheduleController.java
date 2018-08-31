@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpSession;
 import javax.swing.Spring;
 
 import org.slf4j.Logger;
@@ -21,14 +22,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
+import org.zerock.domain.MemberVO;
 import org.zerock.domain.ScheduleVO;
 import org.zerock.domain.Schedule_InfoVO;
 import org.zerock.persistence.ScheduleDAO;
 import org.zerock.service.ScheduleService;
 
 @Controller
-@RequestMapping("/schedule/*") // boardÎäî ÌÅ¥ÎûòÏä§ register Î©îÏÜåÎìú
+/*@RequestMapping("/schedule/*") */
 class ScheduleController {
 	private static final Logger logger = LoggerFactory.getLogger(ScheduleController.class);
 
@@ -36,46 +37,67 @@ class ScheduleController {
 	private ScheduleService service;
 
 	@RequestMapping(value = "/listAll", method = RequestMethod.GET)
-	public String listAll(Model model) throws Exception {
-		logger.info("Ï†ÑÏ≤¥Î¶¨Ïä§Ìä∏ Î≥¥Í∏∞");
+	public String listAll(HttpSession sesstion,Model model) throws Exception {
+		logger.info("¿¸√º∏ÆΩ∫∆Æ ∫∏±‚");
+		MemberVO SeVO = (MemberVO) sesstion.getAttribute("login");
+		System.out.println(SeVO);
 
 		model.addAttribute("listAll", service.listAll());
 		return "/schedule/listAll";
 	}
 
 @RequestMapping(value = "/list", method = RequestMethod.GET)
-	public String list(Model model) throws Exception {
-		logger.info("Î¶¨Ïä§Ìä∏ Î≥¥Í∏∞");
+	public String list(HttpSession sesstion,Model model) throws Exception {
+		logger.info("∏ÆΩ∫∆Æ ∫∏±‚");
+		MemberVO SeVO = (MemberVO) sesstion.getAttribute("login");
+		System.out.println(SeVO);
 
 		model.addAttribute("list", service.list());
-		return "/schedule/list";
+		return "schedule/list";
 	}
+
+@RequestMapping(value = "/schedule", method = RequestMethod.GET)
+public String schedule(HttpSession sesstion,Model model) throws Exception {
+	logger.info("øÓ«◊¿œ¡§∫∏±‚");
+	MemberVO SeVO = (MemberVO) sesstion.getAttribute("login");
+	System.out.println(SeVO);
+
+
+	model.addAttribute("list", service.list());
+	return "schedule/schedule";
+}
 	/*@RequestMapping(value = "/save", method = RequestMethod.POST)
 	public String save(Model model) throws Exception {
 	
 		return "/schedule/save";
 	}*/
 	 @RequestMapping(value="/save",method=RequestMethod.GET)
-	    public void createGET(Schedule_InfoVO vo, Model model) throws Exception{
-	        System.out.println(" GETÎ∞©Ïãù");
+	    public void createGET(HttpSession sesstion,Schedule_InfoVO vo, Model model) throws Exception{
+	        System.out.println(" GETπÊΩƒ");
 	        
 	    }
 	 @RequestMapping(value="/save",method=RequestMethod.POST)
-		public String createPOST(Schedule_InfoVO vo,RedirectAttributes rttr) throws Exception{
-			System.out.println(" POSTÎ∞©Ïãù");
+		public String createPOST(HttpSession sesstion,Schedule_InfoVO vo,RedirectAttributes rttr) throws Exception{
+		 MemberVO SeVO = (MemberVO) sesstion.getAttribute("login");
+			System.out.println(SeVO);
+	
+		 System.out.println(" POSTπÊΩƒ");
 			System.out.println(vo.toString());
 			System.out.println(vo.getSc_num1());
 			System.out.println(vo.getAir_name1());
 			service.insert(vo);
 			rttr.addFlashAttribute("msg","success");
 					
-			return "redirect:/seat/listSeat3";
+			return "redirect:/listSeat3";
 		}
 
 	@RequestMapping(value = "/listAll/{de_place}/{ar_place}/{de_date}", method = RequestMethod.GET)
 	public ResponseEntity<Map<String, Object>> listAll(@PathVariable("de_place") String de_place,
-			@PathVariable("ar_place") String ar_place ,@PathVariable("de_date") String de_date) {
+			@PathVariable("ar_place") String ar_place ,@PathVariable("de_date") String de_date,HttpSession sesstion) {
+		MemberVO SeVO = (MemberVO) sesstion.getAttribute("login");
+		System.out.println(SeVO);
 
+		
 		ResponseEntity<Map<String, Object>> entity = null;
 		try {
 
@@ -93,6 +115,3 @@ class ScheduleController {
 	}
 	
 }
-	
-
-

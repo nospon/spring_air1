@@ -465,6 +465,7 @@ input[type=number]{
 </div>
 <div id="d" style="display: none">
 
+<<<<<<< HEAD
   
    <div class="content_section2">
    <div class="sidenav1">
@@ -483,6 +484,26 @@ input[type=number]{
          <th class="plan_th1">&nbsp;</th>
          <th class="plan_th1" id="d_price"></th>
       </tr>
+=======
+	<br><br><br><br>
+	<div class="content_section2">
+	<div class="sidenav1">
+	<table class="plan_table">
+		<tr>
+			<th class="plan_th" colspan="4">가는 여정</th>
+		</tr>
+		<tr>
+			<th colspan="4"><span id=departuresprint3></span>-<span
+				id=destinationprint3></span><br> <input type="text"
+				id="alternate" class=alternate size=15> </span><span id=d_time></th>
+		</tr>
+		<tr>
+			<th class="plan_th2">성인</th>
+			<th class="plan_th2" id="adult_num">명</th>
+			<th class="plan_th1">&nbsp;</th>
+			<th class="plan_th1" id="d_price">(원)</th>
+		</tr>
+>>>>>>> refs/remotes/origin/master
 
    </table>
 </div>
@@ -555,6 +576,7 @@ input[type=number]{
                   var from = $("#from").val();
                   var to = $("#to").val();
 
+<<<<<<< HEAD
                   $
                         .ajax({
                            type : "GET", // 전송방식을 지정한다 (POST,GET)
@@ -571,6 +593,25 @@ input[type=number]{
                               $(data.list)
                                     .each(
                                            function() {
+=======
+						$
+								.ajax({
+									type : "GET", // 전송방식을 지정한다 (POST,GET)
+									url : "listAll/" + departures + "/"
+											+ destination + "/" + from, // 호출 URL을 설정한다. GET방식일경우 뒤에 파라티터를 붙여서 사용해도된다.
+									dataType : "json", // 호출한 페이지의 형식이다. xml,json,html,text등의 여러 방식을 사용할 수 있다.
+									error : function(request, status, error) {
+										alert("검색 결과가 없습니다"); // 실패 시 처리
+									},
+									success : function(data) {
+										click = false;
+
+										var str = '';
+										click = true;
+										$(data.list)
+												.each(
+														 function() {
+>>>>>>> refs/remotes/origin/master
 
                                                          str += '<tr>';
                                                          str += '<td class="section_th3"><label class="d_num">'
@@ -802,6 +843,7 @@ input[type=number]{
       section.style.display = '';
    }
 
+<<<<<<< HEAD
    
 
    /* 성인 수 */
@@ -813,13 +855,37 @@ input[type=number]{
       var num = $("#adult").val();
       $("#adult_num2").text(num);
    }).trigger('mouseup');
+=======
+var test="";
+	/* 성인 수 */
+	$(":input").on('keyup mouseup', function() {
+		var num = $("#adult").val();
+		test=num;
+		$("#adult_num").text(num +"명");
+	}).trigger('mouseup');
+	$(":input").on('keyup mouseup', function() {
+		var num = $("#adult").val();
+		$("#adult_num2").text(num+"명");
+	}).trigger('mouseup');
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
     /* 시간, 요금 */
+=======
+	 
+	
+	/* 요금 합계 */
+	 var total="";
+	
+	 
+	 /* 시간, 요금 */
+>>>>>>> refs/remotes/origin/master
 
       function Departure(d) {
          var isChecked = $(d).is(":checked");
          var txt;
 
+<<<<<<< HEAD
          if (isChecked == true) {
             d_time = $(d).parent().parent().find('label.d_time').text();
             d_price = $(d).parent().parent().find('label.d_price').text();
@@ -832,11 +898,29 @@ input[type=number]{
 
          }
       }
+=======
+	    
+	        var d_time = $(d).parent().parent().find('label.d_time').text();
+	        var d_price = $(d).parent().parent().find('label.d_price').text();
+	        var d_num = $(d).parent().parent().find('label.d_num').text();
+	        var d_airname = $(d).parent().parent().find('label.d_airname').text();
+	         $('#d_time').text(d_time);
+	         $('#d_price').text(d_price +" (원)");
+	         $('#d_num').val(d_num);
+	         $('#d_airname').val(d_airname);
+	         d_price =parseInt(d_price +" (원)");
+	         total=d_price;
+	     
+	      
+			
+	   }
+>>>>>>> refs/remotes/origin/master
 
       function Arrival(a) {
          var isChecked = $(a).is(":checked");
          var txt;
 
+<<<<<<< HEAD
          if (isChecked == true) {
             a_time = $(a).parent().parent().find('label.a_time').text();
             a_price = $(a).parent().parent().find('label.a_price').text();
@@ -848,6 +932,22 @@ input[type=number]{
             $('#a_airname').val(a_airname);
          }
       }
+=======
+	   
+	        var a_time = $(a).parent().parent().find('label.a_time').text();
+	        var a_price = $(a).parent().parent().find('label.a_price').text();
+	        var a_num = $(a).parent().parent().find('label.a_num').text();
+	        var a_airname = $(a).parent().parent().find('label.a_airname').text();
+	         $('#a_time').text(a_time);
+	         $('#a_price').text(a_price +" (원)");
+	         $('#a_num').val(a_num);
+	         $('#a_airname').val(a_airname);
+	         a_price =parseInt(a_price );
+	        total=(total+a_price)*test;
+	        $('#total').text(total+" (원)");
+	      
+	   }
+>>>>>>> refs/remotes/origin/master
 
      /* 가는 여정 */
       function d_click() {

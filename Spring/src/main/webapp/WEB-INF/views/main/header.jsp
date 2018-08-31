@@ -56,14 +56,14 @@
     
     <div id="table">
 <div class="row">
-<span class="cell col1"><a href="#">항공권 예매</a></span>
-<span class="cell col2"><a href="#">예매내역 확인</a></span>
+<span class="cell col1"><a href="list">항공권 예매</a></span>
+<span class="cell col2"><a href="resInfo">예매내역 확인</a></span>
 <span class="cell col3"><a href="/qna_board.do">고객 센터</a></span>
 </div>
 
 <div class="row">
-<span class="cell col1"><a href="#">스케줄 조회</a></span>
-<span class="cell col2"><a href="#">회원정보 수정</a></span>
+<span class="cell col1"><a href="schedule">스케줄 조회</a></span>
+<span class="cell col2"><a href="updatejoin.do">회원정보 수정</a></span>
 <span class="cell col3"></span>
 
 
@@ -81,13 +81,13 @@
     
        <div id="table">
 <div class="row">
-<span class="cell col1"><a href="#">항공권 예매</a></span>
-<span class="cell col2"><a href="/seatlist.do">예매내역 확인</a></span>
+<span class="cell col1"><a href="list">항공권 예매</a></span>
+<span class="cell col2"><a href="resInfo">예매내역 확인</a></span>
 <span class="cell col3"><a href="/qna_board.do">고객 센터</a></span>
 </div>
 
 <div class="row">
-<span class="cell col1"><a href="#">스케줄 조회</a></span>
+<span class="cell col1"><a href="schedule">스케줄 조회</a></span>
 <span class="cell col2"><a href="#">회원정보 수정</a></span>
 <span class="cell col3"></span>
 
@@ -108,14 +108,14 @@
     
        <div id="table">
 <div class="row">
-<span class="cell col1"><a href="#">항공권 예매</a></span>
-<span class="cell col2"><a href="/seatlist.do">예매내역 확인</a></span>
+<span class="cell col1"><a href="list">항공권 예매</a></span>
+<span class="cell col2"><a href="resInfo">예매내역 확인</a></span>
 <span class="cell col3"><a href="/qna_board.do">고객 센터</a></span>
 </div>
 
 <div class="row">
-<span class="cell col1"><a href="#">스케줄 조회</a></span>
-<span class="cell col2"><a href="#">회원정보 수정</a></span>
+<span class="cell col1"><a href="schedule">스케줄 조회</a></span>
+<span class="cell col2"><a href="updatejoin.do">회원정보 수정</a></span>
 <span class="cell col3"></span>
 
 
