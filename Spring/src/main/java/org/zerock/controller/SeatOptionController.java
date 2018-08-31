@@ -96,7 +96,3 @@ public class SeatOptionController {
 			System.out.println(SeVO);
 		}
 }
-
-
-	
-	

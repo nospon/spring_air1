@@ -115,5 +115,3 @@ public String schedule(HttpSession sesstion,Model model) throws Exception {
 	}
 	
 }
-	
-
