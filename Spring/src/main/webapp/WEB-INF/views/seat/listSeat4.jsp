@@ -5,18 +5,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <style>
-	#seatYN{
-		Width:300px;
-		height:100px;
-		background-color:lightgray;
-		position:absolute;
-		top:100px;
-		left:400px;
-		margin-top:-50px;
-		margin-left:-150px;
-		padding:10px;
-		z-index:1000; 
-	}
+
 </style>
 
 <title>좌석 선택(오는편)</title>
@@ -48,13 +37,10 @@
 		 $(data).each(
 			function(){	
 				air_name+=this.air_name2;
-				sc_num+=this.sc_num2;
-				//alert(air_name);
-		 		//alert(sc_num);
+				sc_num+=this.sc_num2;				
 			});
 		$.getJSON('/seats/all/'+air_name+'/'+sc_num, function(data){
-			//alert(data);
-			//console.log(data.length);
+			
 			var str="";
 			str="<form role='form' method='post'>"+ 
 				"<tr>"+"<th>"+"좌석번호"+"</th>"+
@@ -90,15 +76,11 @@
 		str+="좌석번호 : " + seat_num + " | " + "가격 : " + tic_price + "원";
 		
 		$(".seat-title").html(str);
-		//$("#seatYN").show();
-		
+				
 		var con=confirm(str);
 		
 		if(con==true){
-		//예약하기 버튼 event
-		/*  $("#seatResBtn").on("click",function(){ */
-			//alert("확인");
-		 	 	
+				 	 	
 			$.ajax({
 			type:'put',
 			url:'/seats/'+air_name+'/'+sc_num+'/'+seat_num,
@@ -111,25 +93,24 @@
 				console.log("result : "+result);
 				if(result=='SUCCESS'){
 					$("#seatYN").hide();
-					//alert("수정되었습니다.");
+				
 					var c = confirm("해당 좌석을 선택하시겠습니까?");
 					var formObj=$("form[role='form']");	
 					console.log(formObj);
 					if(c==true){		
-						formObj.attr("action","/seat/payment");
+						formObj.attr("action","/payment");
 						formObj.attr("method","get");
 						formObj.submit();
-						//$('.seatLi button').attr('disabled', true);
-						//location.href="";
+						
 					}
 					else if(c==false){
 						location.href="/main.do";
-						//나중에 메인페이지로 변경
 					}
 				}
 			}
 		});	
-	 //resinfo table에 값 넣기
+	 
+	  //resinfo table에 값 넣기
 
 		$.ajax({
 			type:'put',
@@ -141,12 +122,10 @@
 			dataType:'text',
 			success:function(result){
 				if(result=='SUCCESS'){
-					alert("resinfo update");
+					console.log("resinfo update");
 				}
 			}
-		});
-			
-	 /* }); */
+		});	
 		}
 	});
 	// end------   예약하기 버튼 event 	
@@ -205,6 +184,4 @@
  });
  </script>
 
-<div id="container">	
-</div>
 

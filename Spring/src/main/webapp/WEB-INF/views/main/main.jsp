@@ -180,7 +180,13 @@ body {
 								<div class="row">
 
 									<span class="cell col1"><a href="schedule">스케줄 조회</a></span> <span
+<<<<<<< HEAD
 										class="cell col2"><a href="#">회원정보 수정</a></span> <span
+=======
+
+										class="cell col2"><a href="updatejoin.do">회원정보 수정</a></span> <span
+
+>>>>>>> branch 'master' of https://github.com/nospon/spring_air1.git
 										class="cell col3"></span>
 
 
@@ -228,7 +234,13 @@ body {
 								<div class="row">
 
 									<span class="cell col1"><a href="schedule">스케줄 조회</a></span> <span
+<<<<<<< HEAD
 										class="cell col2"><a href="#">회원정보 수정</a></span> <span
+=======
+
+										class="cell col2"><a href="updatejoin.do">회원정보 수정</a></span> <span
+
+>>>>>>> branch 'master' of https://github.com/nospon/spring_air1.git
 										class="cell col3"></span>
 
 
@@ -280,7 +292,13 @@ body {
 								<div class="row">
 
 									<span class="cell col1"><a href="schedule">스케줄 조회</a></span> <span
+<<<<<<< HEAD
 										class="cell col2"><a href="#">회원정보 수정</a></span> <span
+=======
+
+										class="cell col2"><a href="updatejoin.do">회원정보 수정</a></span> <span
+
+>>>>>>> branch 'master' of https://github.com/nospon/spring_air1.git
 										class="cell col3"></span>
 
 
@@ -834,7 +852,13 @@ body {
 				<div class="row">
 
 					<span class="cell col11"><a href="schedule">스케줄 조회</a></span> <span
+<<<<<<< HEAD
 						class="cell col12"><a href="#">회원정보 수정&nbsp;&nbsp;</a></span> <span
+=======
+
+						class="cell col12"><a href="updatejoin.do">회원정보 수정&nbsp;&nbsp;</a></span> <span
+
+>>>>>>> branch 'master' of https://github.com/nospon/spring_air1.git
 						class="cell col13"><a href="/qna_board.do">고객 센터</a></span> <span
 						class="cell col14"><a href="/join.do">회원가입</a></span>
 

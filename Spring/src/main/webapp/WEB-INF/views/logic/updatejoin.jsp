@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page session="false" %>
+
 <!DOCTYPE html>
 
 <html>
@@ -101,7 +102,7 @@
 			<td colspan=2>
 				<a href="javascript:updateform.submit()">수정하기</a> &nbsp;&nbsp;
 				<a href="javascript:updateform.reset()">다시작성</a> &nbsp;&nbsp;
-				<a href="../mainpage.do">홈</a>
+				<a href="../main.do">홈</a>
 			</td>
 		</tr>
 		<tr>

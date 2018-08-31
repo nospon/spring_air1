@@ -112,12 +112,12 @@ $(document).ready(function(){
 			    		 var air_name2=this.air_name2;
 			    		 
 					$("#rInfo").on("click", ".resInfoLi button", function(){
-						alert("pay_num : " + pay_num + "resInfo_num : " + resInfo_num + "seat_num1 : " + seat_num1 + "air_name1 : " + air_name1
+						console.log("pay_num : " + pay_num + "resInfo_num : " + resInfo_num + "seat_num1 : " + seat_num1 + "air_name1 : " + air_name1
 								+ "seat_num2 : " + seat_num2 + "air_name2 : " + air_name2);
 						var c = confirm("예약을 취소하시겠습니까?");	
 						if(c==true){		
 							
-							//seat_YN=1
+							//seat_YN=1, seat_total+=1 update
 							$.ajax({
 								type:'put',
 								url:'/seats/seatud/'+ air_name1 +'/'+seat_num1 +'/'+air_name2 +'/'+seat_num2,
@@ -129,13 +129,13 @@ $(document).ready(function(){
 								success:function(result){
 									console.log("result : "+result);
 									if(result=='SUCCESS'){
-											alert("Seat_YN update");
+											alert("취소가 완료되었습니다.");
 											location.href="/main.do";
 										}
 									}
 								});
 														
-							//payment,resinfo 삭제
+							//payment,resinfo 삭제(delete실행 후 put 실행됨)
 							$.ajax({
 								async : false,
 								type:'delete',
@@ -148,13 +148,13 @@ $(document).ready(function(){
 								success:function(result){
 									console.log("result:" + result);
 									if(result=='SUCCESS'){
-										alert("payment&resinfo 삭제");
+										console.log("payment&resinfo 삭제");
 									}
 								}
 							});											
 						}
 						else if(c==false){
-							location.href="/seat/resInfo";						
+							location.href="/resInfo";						
 						}
 					});
 				});
@@ -165,7 +165,7 @@ $(document).ready(function(){
 		
 	//Main으로 가는 버튼
 	$("#goMain").on("click", function(){
-		location.href="/main.do"; //main으로 바꾸기
+		location.href="/main.do"; 
 	});
 });
 </script>

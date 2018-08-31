@@ -33,21 +33,25 @@ public class SeatOptionController {
 	
 	//ajax
 	@RequestMapping(value="/listSeat3",method=RequestMethod.GET)
-	public void listAll(Model model, HttpSession sesstion) throws Exception{
+	public String listAll(Model model, HttpSession sesstion) throws Exception{
 		
 		
 		MemberVO SeVO = (MemberVO) sesstion.getAttribute("login");
 		System.out.println(SeVO);
 	
 		model.addAttribute("list",service.listAll());
+		
+		return "seat/listSeat3";
 	}
 	
 	@RequestMapping(value="/listSeat4",method=RequestMethod.GET)
-	public void listAll2(Model model, HttpSession sesstion) throws Exception{
+	public String listAll2(Model model, HttpSession sesstion) throws Exception{
 		logger.info("오는편 좌석");
 		
 		MemberVO SeVO = (MemberVO) sesstion.getAttribute("login");
 		System.out.println(SeVO);
+		
+		return "seat/listSeat4";
 	}
 	
 /*	@RequestMapping(value="/listAll",method=RequestMethod.GET)
@@ -66,11 +70,13 @@ public class SeatOptionController {
 	
 	//원래 결제controller
 	@RequestMapping(value="/payment",method=RequestMethod.GET)
-	public void paymentGET(PaymentVO payment,Model model, HttpSession sesstion) throws Exception{	
+	public String paymentGET(PaymentVO payment,Model model, HttpSession sesstion) throws Exception{	
 		logger.info("결제");
 		
 		MemberVO SeVO = (MemberVO) sesstion.getAttribute("login");
 		System.out.println(SeVO);
+		
+		return "seat/payment";
 	}
 	
 /*	@RequestMapping(value="/payment/{paynum}",method=RequestMethod.POST)
@@ -81,11 +87,13 @@ public class SeatOptionController {
 
 	//원래 좌석 예약 마지막 page
 		@RequestMapping(value="/lastSeat",method=RequestMethod.GET)
-		public void lastSeatGET(PaymentVO payment,Model model, HttpSession sesstion) throws Exception{	
+		public String lastSeatGET(PaymentVO payment,Model model, HttpSession sesstion) throws Exception{	
 			logger.info("좌석예약마지막page");
 			
 			MemberVO SeVO = (MemberVO) sesstion.getAttribute("login");
 			System.out.println(SeVO);
+			
+			return "seat/lastSeat";
 		}
 		
 		@RequestMapping(value="/resInfo",method=RequestMethod.GET)
