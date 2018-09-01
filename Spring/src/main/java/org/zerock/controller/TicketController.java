@@ -30,14 +30,14 @@ public class TicketController {
 	
 	@RequestMapping(value = "seatlist.do", method = RequestMethod.GET)
 	public String seatlist(String engname,TicketVO ticketvo,HttpSession sesstion,Locale locale, Model model) throws Exception {
-		logger.info("¿¹¾àÆäÀÌÁö", locale);
+		logger.info("ì˜ˆì•½í˜ì´ì§€", locale);
 		
 		MemberVO SeVO = (MemberVO) sesstion.getAttribute("login");
 		System.out.println(SeVO);
 		
 		TicketVO tcvo = new TicketVO();
 		tcvo = ticketdao.read();
-		System.out.println(tcvo +"È®ÀÎ");		
+		System.out.println(tcvo +"í™•ì¸");		
 		ticketvo=ticketinfo.tkread(tcvo.getEngname());
 		
 		System.out.println(ticketvo);

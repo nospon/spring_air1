@@ -78,7 +78,7 @@ public class SeatController {
 			return entity;
 			}
 	
-	//Æ¼ÄÏ °ª ³Ñ±â´Â controller
+	//í‹°ì¼“ ê°’ ë„˜ê¸°ëŠ” controller
 	@RequestMapping(value="/tic", method=RequestMethod.GET)
 	public ResponseEntity<List<ResInfoVO>> ticPrice(HttpSession sesstion){
 		
@@ -97,7 +97,7 @@ public class SeatController {
 			return entity;
 		}
 	
-	//¼öÁ¤
+	//ìˆ˜ì •
 	//seat_num & sc_num... /{seat_num}/{sc_num}
 	@RequestMapping(value="/{air_name}/{sc_num}/{seat_num}",method= {RequestMethod.PUT, RequestMethod.PATCH})
 	public ResponseEntity<String> update(
@@ -129,7 +129,7 @@ public class SeatController {
 		return entity;
 	}
 	
-	//°áÁ¦insert
+	//ê²°ì œinsert
 		@RequestMapping(value="",method=RequestMethod.POST)
 		public ResponseEntity<String> register(
 				@RequestBody PaymentVO payment, HttpSession sesstion) {
@@ -150,7 +150,7 @@ public class SeatController {
 			return entity;
 		}
 		
-		//ÆäÀÌÂ¡Ã³¸®
+		//í˜ì´ì§•ì²˜ë¦¬
 		@RequestMapping(value="/{air_name}/{sc_num}/{page}", method=RequestMethod.GET)
 		public ResponseEntity<Map<String, Object>> listPage(
 				@PathVariable("air_name") String air_name,
@@ -188,7 +188,7 @@ public class SeatController {
 			return entity;
 		}
 		
-		//°áÁ¦¿Ï·á
+		//ê²°ì œì™„ë£Œ
 	/*	@RequestMapping(value="/res/{pay_num}", method=RequestMethod.GET)
 		public ResponseEntity<List<PaymentVO>> resList(
 				@PathVariable("pay_num") int pay_num){
@@ -224,7 +224,7 @@ public class SeatController {
 					return entity;
 				}
 		
-		//resInfo table¿¡ °ª ÀúÀå
+		//resInfo tableì— ê°’ ì €ì¥
 		@RequestMapping(value="/resinfo/{air_name}/{sc_num}/{seat_num}",method=RequestMethod.POST)
 		public ResponseEntity<List<String>> resinfoin(
 				@RequestBody ResInfoVO resInfo,HttpSession sesstion) {
@@ -279,7 +279,7 @@ public class SeatController {
 		}
 		
 	
-	 //¿¹¸Å È®ÀÎ(Æ¼ÄÏ Á¶È¸)List
+	 //ì˜ˆë§¤ í™•ì¸(í‹°ì¼“ ì¡°íšŒ)List
 	@RequestMapping(value="/ticketinfo/{name}/{res_rnum}", method=RequestMethod.GET)
 	public ResponseEntity<Map<String, Object>> ticketinfoLi(
 			@PathVariable("name") String name,
@@ -304,8 +304,8 @@ public class SeatController {
 		return entity;
 	}	
 	
-	//¿¹¸Å Ãë¼Ò
-	//payment»èÁ¦(ok), resInfo »èÁ¦(ok) 
+	//ì˜ˆë§¤ ì·¨ì†Œ
+	//paymentì‚­ì œ(ok), resInfo ì‚­ì œ(ok) 
 	@RequestMapping(value="/paymentRM/{pay_num}",method=RequestMethod.DELETE)
 	public ResponseEntity<String> paymentRM(
 			@PathVariable("pay_num") int pay_num, HttpSession sesstion) {
@@ -380,7 +380,7 @@ public class SeatController {
 		return entity;
 	}
 	
-	//air_name, sc_num °¡Á®¿À±â
+	//air_name, sc_num ê°€ì ¸ì˜¤ê¸°
 	@RequestMapping(value="/snum", method=RequestMethod.GET)
 	public ResponseEntity<List<Schedule_InfoVO>> snumList(HttpSession sesstion){
 				
