@@ -11,10 +11,10 @@
 	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
 		<!-- <property name="url" value="jdbc:mysql://127.0.0.1:3306/springair?useSSL=false"></property> -->
-		<property name="url" value="jdbc:mysql://localhost:3306/springair?useSSL=false"></property>
+		<property name="url" value="jdbc:mysql://localhost:3306/spring_air?useSSL=false"></property>
 		<property name="username" value="root"></property>
 		<!-- <property name="password" value="0000"></property> -->
-		<property name="password" value="000000"></property>	
+		<property name="password" value="1111"></property>	
 	</bean> 
 	
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
