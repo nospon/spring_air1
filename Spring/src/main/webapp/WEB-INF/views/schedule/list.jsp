@@ -83,9 +83,6 @@ th, td {
     background-color: rgba(0,0,0,0);   
 }
 
-
-
-
 input[type=number]{
    width: 116.5px;
     height: 35px;
