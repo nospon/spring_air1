@@ -191,10 +191,6 @@ th, td {
 
 
 
-
-
-
-
 .pagination{
 	margin-left: 350px;	
 }
