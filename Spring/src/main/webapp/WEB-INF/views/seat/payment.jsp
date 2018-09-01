@@ -162,6 +162,12 @@ input[type=text],input[type=password]{
                		<option value="선택하세요" selected="selected">선택하세요</option>
 					<option value="BC카드">BC카드</option>
                     <option value="삼성카드">삼성카드</option>
+                    <option value="현대카드">현대카드</option>
+                    <option value="롯데카드">롯데카드</option>
+                    <option value="KB국민카드">KB국민카드</option>
+                    <option value="우리카드">우리카드</option>
+                    <option value="하나카드">하나카드</option>
+                    <option value="농협카드">농협카드</option>
 				</select>
                </td>
            </tr>
@@ -206,16 +212,6 @@ input[type=text],input[type=password]{
 	</div></div>
 <br><br><br><br><br><br><br><br>
 <%@include file="../main/footer.jsp" %>	
-
-	       </tr> 
-	       <tr>
-	           <td class="td8" colspan=2 align="center">
-	               	<button id='gopay' class='btn btn-gopay'>결제하기</button> <!--<type="submit"-->
-	               	<button id='goback' class='btn btn-goback'>취소하기</button>          
-	           </td>
-           </tr>
-       </table>     
-	</div>
 
 </body>
 <script>

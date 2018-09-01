@@ -8,13 +8,13 @@
 
 	<select id="listSeat" resultType="org.zerock.domain.SeatInfoVO">
 		<![CDATA[
-			select schedule.Sc_num, schedule.air_name, schedule.de_date, schedule.tic_price, seat.seat_num, seat.seat_YN, air.na_num, air.Seat_total from schedule, seat, air where seat.Air_name=schedule.air_name and air.Air_name=schedule.Air_name
+			select schedule.Sc_num, schedule.air_name, schedule.de_date, schedule.tic_price, seat.seat_num, seat.seat_YN, air.Seat_total from schedule, seat, air where seat.Air_name=schedule.air_name and air.Air_name=schedule.Air_name
 		]]>
 	</select>	
 	
 	<select id="listSC" resultType="org.zerock.domain.SeatInfoVO">
 		<![CDATA[
-			select schedule.Sc_num, schedule.air_name, schedule.de_date, schedule.tic_price, seat.seat_num, seat.seat_YN, air.na_num, air.Seat_total from schedule, seat, air where seat.Air_name=schedule.air_name and air.Air_name=schedule.Air_name and air.Air_name=#{air_name} and sc_num=#{sc_num}
+			select schedule.Sc_num, schedule.air_name, schedule.de_date, schedule.tic_price, seat.seat_num, seat.seat_YN, air.Seat_total from schedule, seat, air where seat.Air_name=schedule.air_name and air.Air_name=schedule.Air_name and air.Air_name=#{air_name} and sc_num=#{sc_num}
 		]]>
 	</select>
 	
@@ -29,7 +29,7 @@
 	</insert>
 		
 	<select id="listSeatPage" resultType="org.zerock.domain.SeatInfoVO">
-		 select schedule.Sc_num, schedule.air_name, schedule.de_date, schedule.tic_price, seat.seat_num, seat.seat_YN, air.na_num, air.Seat_total from schedule, seat, air where seat.Air_name=schedule.air_name and air.Air_name=schedule.Air_name and air.Air_name=#{air_name} and sc_num=#{sc_num} limit #{cri.pageStart}, #{cri.perPageNum} 	
+		 select schedule.Sc_num, schedule.air_name, schedule.de_date, schedule.tic_price, seat.seat_num, seat.seat_YN, air.Seat_total from schedule, seat, air where seat.Air_name=schedule.air_name and air.Air_name=schedule.Air_name and air.Air_name=#{air_name} and sc_num=#{sc_num} limit #{cri.pageStart}, #{cri.perPageNum} 	
 	</select>
 	
 	<select id="count" resultType="int">
