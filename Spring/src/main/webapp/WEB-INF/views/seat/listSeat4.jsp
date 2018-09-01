@@ -7,13 +7,12 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <style>
 
-<<<<<<< HEAD
+
 body{
 background-image: url('../resources/image/main_images/main_header.png'),url('../resources/image/main_images/main_footer2.png');
 background-repeat: repeat-x;
 background-position: left top,left bottom;
 }
-
 
 
 .section_All{
@@ -210,10 +209,6 @@ th, td {
 }
 
 
-
-
-=======
->>>>>>> refs/remotes/origin/master
 </style>
 
 <title>좌석 선택 | 스프링에어</title>
@@ -422,11 +417,8 @@ th, td {
  });
  </script>
 
-<<<<<<< HEAD
 <div id="container">	
 </div>
 </body>
 
-=======
->>>>>>> refs/remotes/origin/master
 
