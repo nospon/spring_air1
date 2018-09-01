@@ -253,7 +253,7 @@ public class LoginController {
 			
 			memberInfo.modify(updateyee);
 			System.out.println("컨트롤러:"+updateyee);
-			out.println("<script>alert('수정완료'); location.href='../home.do';</script>");
+			out.println("<script>alert('수정완료'); location.href='../main.do';</script>");
 			
 		}else {
 			out.println("<script>alert('비번을 다시 입력해주세요'); history.go(-1); </script>");

@@ -18,20 +18,20 @@ public class BoardDAOImpl implements BoardDAO{
 	private static String namespace="org.zerock.domain.mapper.BoardMapper";
 	
 	
-	//ì „ì²´ë³´ê¸°(ì‚¬ìš©ì•ˆí•¨)
+	//ÀüÃ¼º¸±â(»ç¿ë¾ÈÇÔ)
 	@Override
 	public List<BoardVO> listAll() throws Exception {
 		// TODO Auto-generated method stub
 		return session.selectList(namespace+".listAll");
 	}
-	//ìƒì„¸ë³´ê¸°
+	//»ó¼¼º¸±â
 	@Override
 	public BoardVO read(int board_num) throws Exception {
 		// TODO Auto-generated method stub
 		return session.selectOne(namespace+".read",board_num);
 	}
 	
-	//í˜ì´ì§€ ë¦¬ìŠ¤íŠ¸
+	//ÆäÀÌÁö ¸®½ºÆ®
 	@Override
 	public List<BoardVO> listPage(int page) throws Exception {
 		// TODO Auto-generated method stub
@@ -57,7 +57,7 @@ public class BoardDAOImpl implements BoardDAO{
 		return session.selectOne(namespace+".countPaging",cri);
 	}
 	
-	//ì¡°íšŒìˆ˜ ì¹´ìš´íŒ…
+	//Á¶È¸¼ö Ä«¿îÆÃ
 	@Override
 	public void updateViewCnt(int board_num) throws Exception {
 		// TODO Auto-generated method stub

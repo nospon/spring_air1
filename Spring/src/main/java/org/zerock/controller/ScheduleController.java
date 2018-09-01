@@ -29,7 +29,7 @@ import org.zerock.persistence.ScheduleDAO;
 import org.zerock.service.ScheduleService;
 
 @Controller
-@RequestMapping("/schedule/*") // board는 클래스 register 메소드
+/*@RequestMapping("/schedule/*") */
 class ScheduleController {
 	private static final Logger logger = LoggerFactory.getLogger(ScheduleController.class);
 
@@ -53,7 +53,7 @@ class ScheduleController {
 		System.out.println(SeVO);
 
 		model.addAttribute("list", service.list());
-		return "/schedule/list";
+		return "schedule/list";
 	}
 
 @RequestMapping(value = "/schedule", method = RequestMethod.GET)
@@ -64,7 +64,7 @@ public String schedule(HttpSession sesstion,Model model) throws Exception {
 
 
 	model.addAttribute("list", service.list());
-	return "/schedule/schedule";
+	return "schedule/schedule";
 }
 	/*@RequestMapping(value = "/save", method = RequestMethod.POST)
 	public String save(Model model) throws Exception {
@@ -88,7 +88,7 @@ public String schedule(HttpSession sesstion,Model model) throws Exception {
 			service.insert(vo);
 			rttr.addFlashAttribute("msg","success");
 					
-			return "redirect:/seat/listSeat3";
+			return "redirect:/listSeat3";
 		}
 
 	@RequestMapping(value = "/listAll/{de_place}/{ar_place}/{de_date}", method = RequestMethod.GET)
@@ -115,5 +115,3 @@ public String schedule(HttpSession sesstion,Model model) throws Exception {
 	}
 	
 }
-	
-

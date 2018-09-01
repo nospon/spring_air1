@@ -9,21 +9,21 @@ import org.zerock.domain.Criteria;
 
 public interface BoardDAO {
 	
-	//ì „ì²´ë³´ê¸°(ì´ê±° ì•ˆì”€)
+	//ÀüÃ¼º¸±â(ÀÌ°Å ¾È¾¸)
 	public List<BoardVO> listAll() throws Exception;
 	
-	//ìƒì„¸ë³´ê¸°
+	//»ó¼¼º¸±â
 	public BoardVO read(int board_num) throws Exception;
 	
-	//í˜ì´ì§€ ë¦¬ìŠ¤íŠ¸(131 ìˆ˜ë¥¼ ì •í•´ë†“ì•˜ë˜ê±°)(ì´ê±°ì”€)
+	//ÆäÀÌÁö ¸®½ºÆ®(131 ¼ö¸¦ Á¤ÇØ³õ¾Ò´ø°Å)(ÀÌ°Å¾¸)
 	public List<BoardVO> listPage(int page) throws Exception;
 	
 	public List<BoardVO> listCriteria(Criteria cri)throws Exception;
 	
-	//í˜ì´ì§€ ë¦¬ìŠ½ í•˜ë‹¨ë¶€ë¶„ ì‹¹ë‹¤ ë¶ˆëŸ¬ì˜¤ëŠ”ê±°(ì´ê±¸ ì”€)
+	//ÆäÀÌÁö ¸®šÀ ÇÏ´ÜºÎºĞ ½Ï´Ù ºÒ·¯¿À´Â°Å(ÀÌ°É ¾¸)
 	public int countPaging(Criteria cri) throws Exception;
 	
-	//ì¡°íšŒìˆ˜ ì¹´ìš´íŒ…
+	//Á¶È¸¼ö Ä«¿îÆÃ
 	public void updateViewCnt(int board_num) throws Exception;
 	
 	

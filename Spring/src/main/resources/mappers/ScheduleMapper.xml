@@ -24,15 +24,6 @@ select *from Schedule
 
 	</select>
 
-<select id="schedule" resultType="org.zerock.domain.ScheduleVO">
-	<![CDATA[
-
-		
-select *from Schedule
-
-	]]>
-
-	</select>
 	<insert id="insert">
 		insert into schedule_info
 
@@ -47,16 +38,6 @@ select *from Schedule
 		#{Air_name2})
 	</insert>
 
-
-<insert id="insert2">
-		insert into schedule_info
-
-		(Sc_num,
-		Air_name,
-		) values
-		(#{Sc_num},
-		#{Air_name})
-	</insert>
 
 
 

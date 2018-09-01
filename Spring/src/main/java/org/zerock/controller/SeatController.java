@@ -399,5 +399,3 @@ public class SeatController {
 				return entity;
 			}
 }
-	
-	

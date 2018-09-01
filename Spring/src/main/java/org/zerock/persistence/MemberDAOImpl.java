@@ -17,14 +17,14 @@ public class MemberDAOImpl implements MemberDAO{
 	private SqlSession session;
 	private static String namespace = "org.zerock.domain.mapper.MemberVO";
 	
-//	íšŒì›ê°€ì…
+//	È¸¿ø°¡ÀÔ
 	@Override
 	public void create(MemberVO joinyee) throws Exception {
 		// TODO Auto-generated method stub
 		session.insert(namespace+".create", joinyee);
 	}
 
-//	íšŒì›ì •ë³´ ì½ê¸°
+//	È¸¿øÁ¤º¸ ÀĞ±â
 	@Override
 	public MemberVO read(Integer mem_num) throws Exception {
 		// TODO Auto-generated method stub
@@ -32,21 +32,21 @@ public class MemberDAOImpl implements MemberDAO{
 	}
 
 	
-//	íšŒì›ì •ë³´ ìˆ˜ì •
+//	È¸¿øÁ¤º¸ ¼öÁ¤
 	@Override
 	public void update(MemberVO updateyee) throws Exception {
 		// TODO Auto-generated method stub
 		session.update(namespace+".update", updateyee);
 	}
 
-//	íšŒì› ì •ë³´ ì‚­ì œ
+//	È¸¿ø Á¤º¸ »èÁ¦
 	@Override
 	public void delete(Integer mem_num) throws Exception {
 		// TODO Auto-generated method stub
 		session.delete(namespace+".delete", mem_num);
 	}
 
-//	íšŒì› ì •ë³´ ë‹¤ ê°€ì ¸ì˜¤ê¸° (ë¯¸êµ¬í˜„)
+//	È¸¿ø Á¤º¸ ´Ù °¡Á®¿À±â (¹Ì±¸Çö)
 	@Override
 	public List<MemberVO> listAll() throws Exception {
 		// TODO Auto-generated method stub
@@ -54,14 +54,14 @@ public class MemberDAOImpl implements MemberDAO{
 	}
 	
 	
-	//ë¡œê·¸ ì •ë³´ì‚­ì œ
+	//·Î±× Á¤º¸»èÁ¦
 	@Override
 	public MemberVO logremove(String id) throws Exception {
 		// TODO Auto-generated method stub
 		return session.selectOne(namespace+".remove",id);
 	}
 	
-	//ë¡œê·¸ì¸ ë¹„êµ ì‘ì—… í–ˆì„ë–„
+	//·Î±×ÀÎ ºñ±³ ÀÛ¾÷ ÇßÀ»‹š
 	@Override
 	public MemberVO logreadPw(LogicVO lvo) throws Exception {
 		// TODO Auto-generated method stub
@@ -75,7 +75,7 @@ public class MemberDAOImpl implements MemberDAO{
 	}
 	
 	
-	//ë¹„ë°€ë²ˆí˜¸ê°€ ë§ë‹¤ë©´ ìˆ˜ì • ë° ì‚­ì œ ì²´í¬ 
+	//ºñ¹Ğ¹øÈ£°¡ ¸Â´Ù¸é ¼öÁ¤ ¹× »èÁ¦ Ã¼Å© 
 	@Override
 	public boolean cheakPw(String id, String pass) throws Exception {
 		// TODO Auto-generated method stub
@@ -86,7 +86,7 @@ public class MemberDAOImpl implements MemberDAO{
 		map.put("pass", pass);
 		System.out.println("dao:"+pass);
 		int count = session.selectOne(namespace+".checkPw",map);
-		System.out.println("ì¹´ìš´íŠ¸ê°’:"+count);
+		System.out.println("Ä«¿îÆ®°ª:"+count);
 		if(count == 1) {
 			result=true;
 		}

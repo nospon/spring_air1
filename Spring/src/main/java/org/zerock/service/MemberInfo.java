@@ -9,23 +9,23 @@ import org.zerock.domain.MemberVO;
 
 
 public interface MemberInfo {
-		//ì¶”ê°€
+		//Ãß°¡
 		public void regist(MemberVO joinyee)throws Exception;
-		//ì½ê¸°
+		//ÀĞ±â
 		public MemberVO read(Integer mem_num)throws Exception;
-		//ìˆ˜ì •
+		//¼öÁ¤
 		public void modify(MemberVO updateyee)throws Exception;
-		//ì‚­ì œ
+		//»èÁ¦
 		public void remove(Integer mem_num)throws Exception;
-		//ë¦¬ìŠ¤íŠ¸
+		//¸®½ºÆ®
 		public List<MemberVO> listAll()throws Exception;
 		
 		public MemberVO logremove(String id)throws Exception;
 		
-		//ë¡œê·¸ì¸ ì •ë³´ ê°€ì ¸ì˜¤ê¸°
+		//·Î±×ÀÎ Á¤º¸ °¡Á®¿À±â
 		public MemberVO logreadPw(LogicVO lvo)throws Exception;
 		
-		//íšŒì›ì •ë³´ ìˆ˜ì • ë° ì‚­ì œ
+		//È¸¿øÁ¤º¸ ¼öÁ¤ ¹× »èÁ¦
 		public boolean checkPw(String id, String pass) throws Exception;
 		
 	

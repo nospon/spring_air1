@@ -14,7 +14,11 @@
 		<property name="url" value="jdbc:mysql://localhost:3306/spring_air?useSSL=false"></property>
 		<property name="username" value="root"></property>
 		<!-- <property name="password" value="0000"></property> -->
+<!-- <<<<<<< HEAD -->
 		<property name="password" value="1111"></property>	
+<!-- ======= -->
+		<!-- <property name="password" value="1234"></property>	 -->
+<!-- >>>>>>> branch 'master' of https://github.com/nospon/spring_air1.git -->
 	</bean> 
 	
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">

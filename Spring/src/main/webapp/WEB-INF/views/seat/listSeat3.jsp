@@ -3,39 +3,268 @@
 <%@ page session="false" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<link rel="icon" type="image/ico"  href="../resources/image/main_images/Favicon.ico"/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <style>
-	#seatYN{
-		Width:300px;
-		height:100px;
-		background-color:lightgray;
-		position:absolute;
-		top:100px;
-		left:400px;
-		margin-top:-50px;
-		margin-left:-150px;
-		padding:10px;
-		z-index:1000; 
-	}
-	
+
+body{
+background-image: url('../resources/image/main_images/main_header.png'),url('../resources/image/main_images/main_footer2.png');
+background-repeat: repeat-x;
+background-position: left top,left bottom;
+}
+
+.section_All{
+	margin-left: 100px;		
+}
+
+table {	
+    border-collapse: collapse;
+    width: 100%;
+    background-color: rgba(216,214,202,0.05);
+    color: #252D2E;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #D8D6CA; 
+    font-size: 14px;
+}
+
+/*좌석번호 가격속성*/
+.td_style1{
+	background-color: rgba(216,214,202,0.3); 
+    border-top: 3px solid #fe5674;
+    border-right: 1px solid rgba(0,0,0,0);  
+    border-bottom: 1px solid rgba(224,112,136,0.4); 
+}
+
+/*check속성*/
+.td_style2{
+	background-color: rgba(216,214,202,0.3); 
+    border-top: 3px solid #fe5674;  
+    border-bottom: 1px solid rgba(224,112,136,0.4);  
+    width:40%;
+    text-align: center;
+}
+
+
+
+
+
+/*나머지 행,열*/
+.td_style3{
+	background-color: rgba(216,214,202,0.05); 
+    border-bottom: 1px solid rgba(216,214,202,0.7); 
+    border-right: 1px solid rgba(216,214,202,0.4); 
+}
+
+
+
+
+/*버튼 속성*/
+
+#button {
+    width: 204px;
+    background-color: #fe5674;
+    color: white;
+    padding: 10px 10px;    
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 109px; 
+}
+
+#button:hover {
+    background-color: #fe123c;
+}
+
+
+/* 가는편 좌석 예약 속성 */
+.seat_title{
+   width: 220px;
+   height: 25px;
+   font-weight: bold;
+   color: #252D2E;
+   margin-bottom: -15px;
+   margin-left: -12px;
+   border: 2px solid rgba(0,0,0,0);      
+   background: rgba(0,0,0,0);
+}
+
+.seat_title th, .seat_title td {
+   border: 2px solid rgba(0,0,0,0);      
+  
+}
+
+
+.seat_title img {
+   margin-bottom: 12px;
+}
+
+
+
+/* 하단 좌석배치표 글씨및 정사각형 속성 */
+
+.seat_title1{
+   width: 280px;
+   height: 25px;
+   font-weight: bold;
+   color: #252D2E;
+   margin-bottom: -15px;
+   margin-left: -12px;
+   border: 2px solid rgba(0,0,0,0);      
+   background: rgba(0,0,0,0);
+}
+
+.seat_title1 th, .seat_title1 td {
+   border: 2px solid rgba(0,0,0,0);      
+  
+}
+
+
+.seat_title1 img {
+   margin-bottom: 12px;
+}
+
+
+.bottom_text {
+   width: 1100px;
+   height: 25px;
+   font-weight: bold;
+   color: #252D2E;
+   margin-bottom: -15px;        
+   border-top: 3px solid #fe5674;  
+   background-color: rgba(216,214,202,0.2); 
+}
+
+
+
+.bottom_td1{
+   width: 1.5%;      
+   border-right: 1px solid rgba(0,0,0,0);   
+}
+
+.bottom_td2{
+   width: 1.5%; 
+   border-left: 1px solid rgba(0,0,0,0);    
+   border-right: 1px solid rgba(0,0,0,0);   
+}
+
+.bottom_td3{
+   width: 100px; 
+   border-left: 1px solid rgba(0,0,0,0);         
+}
+
+.bottom_td4{
+   width: 80px; 
+   border-left: 1px solid rgba(0,0,0,0);    
+   border-right: 1px solid rgba(0,0,0,0);   
+   margin-left: -500px;
+}
+
+
+
+
+
+.square1{
+ 	width: 32px;
+    height: 32px;
+    background: #FE7E87;
+    margin-left: 10px;
+    
+}
+
+
+.square2{
+ 	width: 32px;
+    height: 32px;
+    background: #B6DDE8;   
+
+}
+
+.square3{
+ 	width: 32px;
+    height: 32px;
+    background: #E4E1CE;    
+}
+
+
+
+
+
+
+
+.pagination{
+	margin-left: 350px;	
+}
+
+
+
+.pagination a{
+	text-decoration: none;
+	color: #fe5674;
+}
+
 </style>
 
-<title>좌석 선택(가는편)</title>
-<h3>가는편 좌석 예약</h3>
+<title>좌석 선택 | 스프링에어</title>
+
+<body>
+<%@include file="../main/header.jsp" %>
+
+
+<div class="section_All">
+<br><br><br>
+<table class="seat_title"><tr>
+   <td><img src="../resources/image/main_images/airplain.png" height="25px" width="35px"></td>
+   <td><h3><b>가는편 | 좌석 예약</b></h3></td>
+</tr></table>
+
+
 <div>
-	<table id="passenger_details" border=1></table>
+	<table id="passenger_details"></table>
 </div>
 
-<div class='span'><span>[ A,F는 창가 좌석입니다. ]</span></div>
+
 
 <div id="seatYN" style="display: none">	
 	<div class='seat-title'></div>
 	<div>
-		<button id="seatResBtn">예약하기</button>
+		<button class="button" id="seatResBtn">예약하기</button>
 	</div>
 </div>
 
 <div><ul class="pagination"></ul></div>
+<br><br>
+<table class="seat_title1"><tr>
+   <td><img src="../resources/image/main_images/airplain.png" height="25px" width="35px"></td>
+   <td><h3><b>Spring air | 좌석 배치도</b></h3></td>
+</tr></table>
+
+<table class="bottom_text">
+<tr>
+<td class="bottom_td1"><div class="square1"></div></td>
+<td class="bottom_td4">좌석</td>
+<td class="bottom_td2"><div class="square2"></div></td>
+<td class="bottom_td4">비상구 좌석</td>
+<td class="bottom_td2"><div class="square3"></div></td>
+<td class="bottom_td4">화장실</td>
+<td class="bottom_td3"><span>[ A,F는 창가 좌석입니다. ]</span></td>
+</tr>
+</table><br>
+
+
+<img src="../resources/image/main_images/seatlayout.png">
+
+
+
+
+
+
+</div>
+<br><br><br>
+<%@include file="../main/footer.jsp" %>
 
 <script>
 var str=""; 
@@ -50,25 +279,20 @@ var sc_num="";
 			function(){	
 				air_name+=this.air_name1;
 				sc_num+=this.sc_num1;
-				//alert(air_name);
-		 		//alert(sc_num);
 			});
-			//alert(air_name);
- 		//alert(sc_num);
-		 	
+			 	
 	 	$.getJSON('/seats/all/'+air_name+'/'+sc_num, function(data){
-			//alert(data);
-			//console.log(data.length);
+			
 			var str="";
 			str="<form role='form' method='post'>"+ 
-				"<tr>"+"<th>"+"좌석번호"+"</th>"+
-				"<th>"+"가격"+"</th>"+
-				"<th>"+"check"+"</th>"+"</tr>"
+				"<tr>"+'<th class="td_style1">'+"좌석번호"+"</th>"+
+				'<th class="td_style1">'+"가격"+"</th>"+
+				'<th class="td_style2">'+"check"+"</th>"+"</tr>"
 		$(data.list).each(
 			function(){
-			    	str+="<tr class='seatLi'>"+"<td>"+this.seat_num+"</td>"+
-	    			        "<td>"+this.tic_price+"</td>"+
-	    			        "<td>"+"<button class='seatbtn'>예약하기</button>"+"</td>"+"</tr>"	
+			    	str+="<tr class='seatLi'>"+'<td class="td_style3">'+this.seat_num+"</td>"+
+			    	'<td class="td_style3">'+this.tic_price+"</td>"+
+			    	'<td class="td_style3">'+"<button  id='button' class='seatbtn'>예약하기</button>"+"</td>"+"</tr>"	
 		
 		});
 		str+="</form>"; 
@@ -95,14 +319,12 @@ var sc_num="";
 		str+="좌석번호 : " + seat_num + " | " + "가격 : " + tic_price + "원";
 		
 		$(".seat-title").html(str);
-		//$("#seatYN").show();
-		
+				
 		var con=confirm(str);
 		
 		if(con==true){		
 		//예약하기 버튼 event
-		/*  $("#seatResBtn").on("click",function(){ */
-			//alert("확인");	 	
+	 	
 			$.ajax({
 			type:'put',
 			url:'/seats/'+air_name+'/'+sc_num+'/'+seat_num,
@@ -115,20 +337,17 @@ var sc_num="";
 				console.log("result : "+result);
 				if(result=='SUCCESS'){
 					$("#seatYN").hide();
-					//alert("수정되었습니다.");
+					
 					var c = confirm("해당 좌석을 선택하시겠습니까?");
 					var formObj=$("form[role='form']");	
 					console.log(formObj);
 					if(c==true){		
-						formObj.attr("action","/seat/listSeat4");
+						formObj.attr("action","/listSeat4");
 						formObj.attr("method","get");
 						formObj.submit();
-						//$('.seatLi button').attr('disabled', true);
-						//location.href="";
 					}
 					else if(c==false){
-						location.href="/seat/listSeat3";
-						//나중에 메인페이지로 변경
+						location.href="/main.do";						
 					}
 				}
 			}
@@ -150,12 +369,10 @@ var sc_num="";
 			}),
 			success:function(result){
 				if(result=='SUCCESS'){
-					alert("resinfo등록");
+					console.log("resinfo등록");
 				}
 			}
-		});
-			
-	/*  }); */
+		});	
 		}
 	});
 	// end------   예약하기 버튼 event 	
@@ -168,14 +385,14 @@ var sc_num="";
 			console.log(data.list.length);
 			var str="";
 			str="<form role='form' method='post'>"+
-				"<tr>"+"<th>"+"좌석번호"+"</th>"+
-				"<th>"+"가격"+"</th>"+
-				"<th>"+"check"+"</th>"+"</tr>"
+				"<tr>"+'<th class="td_style1">'+"좌석번호"+"</th>"+
+				'<th class="td_style1">'+"가격"+"</th>"+
+				'<th class="td_style2">'+"check"+"</th>"+"</tr>"
 		$(data.list).each(
 			function(){
-			    	str+="<tr class='seatLi'>"+"<td>"+this.seat_num+"</td>"+
-	    			        "<td>"+this.tic_price+"</td>"+
-	    			        "<td>"+"<button class='seatbtn'>예약하기</button>"+"</td>"+"</tr>"	
+			    	str+="<tr class='seatLi'>"+'<td class="td_style3">'+this.seat_num+"</td>"+
+			    	'<td class="td_style3">'+this.tic_price+"</td>"+
+	    			        "<td>"+"<button id='button' class='seatbtn'>예약하기</button>"+"</td>"+"</tr>"	
 		
 		});
 	    str+="</form>"; 
@@ -190,7 +407,7 @@ var sc_num="";
 		var str="";
 		
 		if(pageMaker.prev){
-			str += "<li style='display:inline'><a href = '"+(pageMaker.startPage-1)+"'> << </a></li>";
+			str += "<li style='display:inline'><a href = '"+(pageMaker.startPage-1)+"'> &laquo; </a></li>";
 		}
 		
 		for(var i=pageMaker.startPage, len=pageMaker.endPage; i <= len; i++){
@@ -199,7 +416,7 @@ var sc_num="";
 		}
 		
 		if(pageMaker.next){
-			str += "<li style='display:inline'><a href = '"+(pageMaker.endPage+1)+"'> >> </a></li>";
+			str += "<li style='display:inline'><a href = '"+(pageMaker.endPage+1)+"'> &raquo; </a></li>";
 		}
 		
 		$('.pagination').html(str);
@@ -218,4 +435,6 @@ var sc_num="";
 
 <div id="container">	
 </div>
+</body>
+
 

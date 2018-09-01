@@ -1,16 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+   pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page session="false"%>
 <html>
 <head>
 <link rel="icon" type="image/ico"  href="../resources/image/main_images/Favicon.ico"/>
- <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/scedule.css" type="text/css"> 
+ 
 
 
 
 <link rel="stylesheet"
-	href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+   href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <link rel="stylesheet" href="/resources/demos/style.css">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -30,25 +30,25 @@ background-position: left top,left bottom;
 
 /* 제목 마진간격 속성*/
 h3,h4 {
-	margin-left: 100px;
+   margin-left: 100px;
 }
 
 /*첫번째 테이블 관련 속성 -> reservation table */
 
-.reservation_table1{		
-	border-collapse: collapse;
-	font-size: 14px;
-	border: 1px solid #D8D6CA; /* 첫번째테이블 테두리 */
-	border-top: 3px solid #fe5674;
-	margin-left: 100px;
-	width: 1100px;
-	background-color: rgba(216,214,202,0.02); /* 첫번째 테이블 배경색 */
+.reservation_table1{      
+   border-collapse: collapse;
+   font-size: 14px;
+   border: 1px solid #D8D6CA; /* 첫번째테이블 테두리 */
+   border-top: 3px solid #fe5674;
+   margin-left: 100px;
+   width: 1100px;
+   background-color: rgba(216,214,202,0.02); /* 첫번째 테이블 배경색 */
 }
 
 
 /* 간격 조금 띄운거랑 정렬방법 */
 .reservation_td {
-	padding: 15px;
+   padding: 15px;
     text-align: left;   
 }
 
@@ -68,7 +68,7 @@ th, td {
     border: 1px solid #D8D6CA; 
     border-radius: 0px;
     box-sizing: border-box;
-    background-color: rgba(216,214,202,0.2);	
+    background-color: rgba(216,214,202,0.2);   
 } 
 
 
@@ -80,30 +80,30 @@ th, td {
     display: inline-block;   
     border-radius: 0px;
     box-sizing: border-box;
-    background-color: rgba(0,0,0,0);	
+    background-color: rgba(0,0,0,0);   
 }
 
 
 
 
 input[type=number]{
-	width: 116.5px;
+   width: 116.5px;
     height: 35px;
     padding-left: 5px;
     font-size: 15px;
     color: #485759;
     border: 1px solid #D8D6CA;   
-    background-color: rgba(216,214,202,0.2);	
+    background-color: rgba(216,214,202,0.2);   
 }
 
 .style select {
-	width: 200px;
+   width: 200px;
     height: 35px;
     padding-left: 5px;
     font-size: 15px;
     color: #485759;
     border: 1px solid #D8D6CA;   
-    background-color: rgba(216,214,202,0.2);	 
+    background-color: rgba(216,214,202,0.2);    
  }
  
 
@@ -132,6 +132,7 @@ input[type=number]{
     cursor: pointer;
     margin-left: 502px;   
     margin-top: 30px; 
+    margin-bottom: 30px; 
 }
 .button:hover {
     background-color: #fe123c;
@@ -148,6 +149,8 @@ input[type=number]{
     border-radius: 4px;
     cursor: pointer;
     margin-left: 502px;  
+    margin-top: 20px;   
+    margin-bottom: 50px; 
 }
 .button1:hover {
     background-color: #fe123c;
@@ -159,16 +162,16 @@ input[type=number]{
 
 /* 달력색 */
 .ui-datepicker-calendar>tbody td:first-child a {
-	COLOR: #f00;
+   COLOR: #f00;
 }
 
 .ui-datepicker-calendar>tbody td:last-child a {
-	COLOR: blue;
+   COLOR: blue;
 }
 
 .alternate {
-	border: 0 solid black;
-	text-align: center
+   border: 0 solid black;
+   text-align: center
 }
 
 
@@ -177,125 +180,127 @@ input[type=number]{
 
 
 .section_title{
-	width: 400px;
-	height: 25px;
-	font-weight: bold;
-	color: #252D2E;
-	margin-bottom: -15px;
-	margin-left: -100px;
+   width: 400px;
+   height: 25px;
+   font-weight: bold;
+   color: #252D2E;
+   margin-bottom: -15px;
+   margin-left: -100px;
 }
+
+
 
 .section_title img {
-	margin-bottom: 8px;
+   margin-bottom: 8px;
 }
 
-.section_table{		
-	border-collapse: collapse;
-	font-size: 14px;
-	border: 1px solid rgba(216,214,202,0.7); 
-	border-top: 3px solid #fe5674;	
-	width: 100%;	
-	background-color: rgba(216,214,202,0.05);
+.section_table{      
+   border-collapse: collapse;
+   font-size: 14px;
+   border: 1px solid rgba(216,214,202,0.7); 
+   border-top: 3px solid #fe5674;   
+   width: 100%;   
+   background-color: rgba(216,214,202,0.05);
 }
 
-.section_th {				
-	border-bottom: 1px solid rgba(224,112,136,0.4);
-	color: #485759;
+.section_th {            
+   border-bottom: 1px solid rgba(224,112,136,0.4);
+   color: #485759;
 }
 
-.section_th1 {				
-	border-bottom: 1px solid rgba(224,112,136,0.4);
-	color: #485759;
-	padding: 10px;
+.section_th1 {            
+   border-bottom: 1px solid rgba(224,112,136,0.4);
+   color: #485759;
+   padding: 10px;
 }
 
-.section_th,.section_th1,.section_th2{	
-	background: rgba(216,214,202,0.2);
-	
-}
-
-/*투명 적용 테이블 속성*/
-.section_th2 {				
-	border-bottom: 1px solid rgba(224,112,136,0.4);
-	color: rgba(0,0,0,0);
-	width: 2px;
-}
-
-
-
-.section_th3 {				
-	border-left: 1px solid rgba(216,214,202,0.7); 
-	color: rgba(0,0,0,0);
-	padding: 10px;
+.section_th,.section_th1,.section_th2{   
+   background: rgba(216,214,202,0.2);
+   
 }
 
 /*투명 적용 테이블 속성*/
+.section_th2 {            
+   border-bottom: 1px solid rgba(224,112,136,0.4);
+   color: rgba(0,0,0,0);
+   width: 5px;
+}
 
 
 
-.section_td {	
-	color: #617678;	
+.section_th3 {            
+   border-left: 1px solid rgba(216,214,202,0.7); 
+   color: rgba(0,0,0,0);
+   padding: 10px;
+}
+
+/*투명 적용 테이블 속성*/
+
+
+
+.section_td {   
+   color: #617678;   
 }
 
 
 /*가는 여정 오는 여정 테이블 plan_table */
 
 .plan_table {
-	border-collapse: collapse;
-	font-size: 14px;
-	border: 1px solid #D8D6CA;
-	border-top: 3px solid #fe5674;		
-	width: 360px;
-	background-color: rgba(216,214,202,0.01);
-	color: #485759;
-	margin-top: 22px;
+   border-collapse: collapse;
+   font-size: 14px;
+   border: 1px solid #D8D6CA;
+   border-top: 3px solid #fe5674;      
+   width: 360px;
+   background-color: rgba(216,214,202,0.01);
+   color: #485759;
+   margin-top: 22px;
 }
 
 
 .plan_table2 {
-	border-collapse: collapse;
-	font-size: 14px;
-	border: 1px solid #D8D6CA;
-	border-top: 3px solid #fe5674;		
-	width: 360px;
-	background-color: rgba(216,214,202,0.01);
-	color: #485759;
-	margin-top: 127px;
+   border-collapse: collapse;
+   font-size: 14px;
+   border: 1px solid #D8D6CA;
+   border-top: 3px solid #fe5674;      
+   width: 360px;
+   background-color: rgba(216,214,202,0.01);
+   color: #485759;
+   margin-top: -30px;
 }
 
 
 .plan_th{
-	background: rgba(216,214,202,0.2);	
-	border-bottom: 1px solid rgba(224,112,136,0.4);
-	color: #252D2E;
-	font-weight: bold;
+   background: rgba(216,214,202,0.2);   
+   border-bottom: 1px solid rgba(224,112,136,0.4);
+   color: #252D2E;
+   font-weight: bold;
 }
 
 
 .plan_th1{
-	border-top: 1px dashed rgba(216,214,202,0.6);
-	border-left: 1px solid rgba(0,0,0,0);
-	border-bottom: 1px dashed rgba(216,214,202,0.6);
+   border-top: 1px dashed rgba(216,214,202,0.6);
+   border-left: 1px solid rgba(0,0,0,0);
+   border-bottom: 1px dashed rgba(216,214,202,0.6);
 }
 
 .plan_th2{
-	border-top: 1px dashed rgba(216,214,202,0.6);
-	border-right: 1px solid rgba(0,0,0,0);
-	border-bottom: 1px dashed rgba(216,214,202,0.6);
+   border-top: 1px dashed rgba(216,214,202,0.6);
+   border-right: 1px solid rgba(0,0,0,0);
+   border-bottom: 1px dashed rgba(216,214,202,0.6);
 }
 
-.plan_th3 {	
-	border: 1px solid #D8D6CA;	
-	border-top: 3px solid #fe5674;
-	border-right: 1px solid rgba(0,0,0,0);	
-	background-color: rgba(216,214,202,0.2);	
+.plan_th3 {   
+   border: 1px solid #D8D6CA;   
+   border-top: 3px solid #fe5674;
+   border-right: 1px solid rgba(0,0,0,0);   
+   background-color: rgba(216,214,202,0.2);   
 }
 
 .plan_th4 {
-	border: 1px solid #D8D6CA;	
-	border-top: 3px solid #fe5674;	
-	border-left: 1px solid rgba(0,0,0,0);	
-	background-color: rgba(216,214,202,0.2);	
+   border: 1px solid #D8D6CA;   
+   border-top: 3px solid #fe5674;   
+   border-left: 1px solid rgba(0,0,0,0);   
+   background-color: rgba(216,214,202,0.2);   
 }
 
 
@@ -307,31 +312,31 @@ input[type=number]{
 
 
 .content_section1 {
-	 float: left;  
-	 height: 60%;
-	 width: 725px;	
-	 margin-left: 100px;
+    float: left;  
+    height: 70%;
+    width: 725px;   
+    margin-left: 100px;  
 }
 
 .content_section2 {
-	 float: left;  
-	 height: 50%;
-	 width: 375px;	
+    float: left;  
+    height: 60%;
+    width: 375px;       
 }
 
 
 .content_section3 {
-	 clear: both;
-	 width: 100%;
-	 height: 50px;	
+    clear: both;
+    width: 100%;
+    height: 50px;     
 }
 
 
 
-.sidenav1 {	
+.sidenav1 {   
     width: 375px;  
-    margin-top: -13px;  
-    margin-left: 18px;
+    margin-top: 53px;  
+    margin-left: 18px;      
 }
 
 
@@ -350,8 +355,8 @@ input[type=number]{
 
 /* 1구간 2구간 색상*/
 .span_section {
-	color: #fe5674;
-	font-weight: bold;
+   color: #fe5674;
+   font-weight: bold;
 }
 .save {
    display: none;
@@ -475,7 +480,7 @@ input[type=number]{
 			<th class="plan_th2">성인</th>
 			<th class="plan_th2" id="adult_num">명</th>
 			<th class="plan_th1">&nbsp;</th>
-			<th class="plan_th1" id="d_price"></th>
+			<th class="plan_th1" id="d_price">(원)</th>
 		</tr>
 
 	</table>
@@ -559,7 +564,8 @@ input[type=number]{
 										alert("검색 결과가 없습니다"); // 실패 시 처리
 									},
 									success : function(data) {
-										//var data = data.list;
+										click = false;
+
 										var str = '';
 										click = true;
 										$(data.list)
@@ -796,51 +802,63 @@ input[type=number]{
 		section.style.display = '';
 	}
 
-	
-
+var test="";
 	/* 성인 수 */
 	$(":input").on('keyup mouseup', function() {
 		var num = $("#adult").val();
-		$("#adult_num").text(num);
+		test=num;
+		$("#adult_num").text(num +"명");
 	}).trigger('mouseup');
 	$(":input").on('keyup mouseup', function() {
 		var num = $("#adult").val();
-		$("#adult_num2").text(num);
+		$("#adult_num2").text(num+"명");
 	}).trigger('mouseup');
 
+	 
+	
+	/* 요금 합계 */
+	 var total="";
+	
+	 
 	 /* 시간, 요금 */
 
 	   function Departure(d) {
 	      var isChecked = $(d).is(":checked");
 	      var txt;
 
-	      if (isChecked == true) {
-	         d_time = $(d).parent().parent().find('label.d_time').text();
-	         d_price = $(d).parent().parent().find('label.d_price').text();
-	         d_num = $(d).parent().parent().find('label.d_num').text();
-	         d_airname = $(d).parent().parent().find('label.d_airname').text();
+	    
+	        var d_time = $(d).parent().parent().find('label.d_time').text();
+	        var d_price = $(d).parent().parent().find('label.d_price').text();
+	        var d_num = $(d).parent().parent().find('label.d_num').text();
+	        var d_airname = $(d).parent().parent().find('label.d_airname').text();
 	         $('#d_time').text(d_time);
-	         $('#d_price').text(d_price);
+	         $('#d_price').text(d_price +" (원)");
 	         $('#d_num').val(d_num);
 	         $('#d_airname').val(d_airname);
-
-	      }
+	         d_price =parseInt(d_price +" (원)");
+	         total=d_price;
+	     
+	      
+			
 	   }
 
 	   function Arrival(a) {
 	      var isChecked = $(a).is(":checked");
 	      var txt;
 
-	      if (isChecked == true) {
-	         a_time = $(a).parent().parent().find('label.a_time').text();
-	         a_price = $(a).parent().parent().find('label.a_price').text();
-	         a_num = $(a).parent().parent().find('label.a_num').text();
-	         a_airname = $(a).parent().parent().find('label.a_airname').text();
+	   
+	        var a_time = $(a).parent().parent().find('label.a_time').text();
+	        var a_price = $(a).parent().parent().find('label.a_price').text();
+	        var a_num = $(a).parent().parent().find('label.a_num').text();
+	        var a_airname = $(a).parent().parent().find('label.a_airname').text();
 	         $('#a_time').text(a_time);
-	         $('#a_price').text(a_price);
+	         $('#a_price').text(a_price +" (원)");
 	         $('#a_num').val(a_num);
 	         $('#a_airname').val(a_airname);
-	      }
+	         a_price =parseInt(a_price );
+	        total=(total+a_price)*test;
+	        $('#total').text(total+" (원)");
+	      
 	   }
 
 	  /* 가는 여정 */
